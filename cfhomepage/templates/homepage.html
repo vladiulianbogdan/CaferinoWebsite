@@ -39,9 +39,31 @@
   background-color: red;
 }
 
-/* .navbar-nav li a {
-    line-height: 50px;
-} */
+.outer {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column; /* added */
+  padding-left: 120px;
+  padding-right: 120px;
+}
+
+.row {
+  display: flex;
+  flex: 1; /* added */
+}
+
+.item {
+  flex: 1; /* added */
+  padding: 30px;
+}
+
+.item_description {
+  height: 100px;
+}
+
+.item_title {
+  height: 30px;
+}
     </style>
 </head>
 <body>
@@ -153,5 +175,59 @@
             </div>
             </div>
       </div>
+    </div>
+
+    <div style="display: flex; justify-content: center;">
+      <div style="width: 40%;display: flex;flex-direction: column;justify-content: center;align-items: center;">
+        <p style="text-align: center; font-family: 'Montserrat';text-align: center;font-size: 40;color: #CA351E; margin-top: 25px;">CE ESTE CAFERINO</p>
+        <img style="width: 100px; height: 100px;" src="{% static "/ce_este_0.svg" %}" alt="My image"></img>
+        <hr style="width: 100%;text-align: left;margin-left: 0;background-color: black;">
+        <p>O CAFEA AROMATĂ TE VA AȘTEPTA ORICÂND</p>
+        <p style="text-align: center;">Fie ca ai o discutie interesanta cu prietenii sau te bucuri de cartea preferata, fie lucrezi la un proiect sau te bucuri de zambetul copilului tau, cafeaua din boabe proaspat macinate iti va condimenta momentele specială.</p>
+      </div>
+    </div>
+    <div class="outer">
+      <div class="row">
+        <div class="item" style="width: 40%;display: flex;flex-direction: column;justify-content: center;align-items: center;">
+          <img style="width: 100px; height: 100px;" src="{% static "/ce_este_1.svg" %}" alt="My image"></img>
+          <hr style="width: 100%;text-align: left;margin-left: 0;background-color: black;">
+          <p class="item_title">CONSTRUIEȘTE-ȚI PROIECTELE AICI</p>
+          <p class="item_description" style="text-align: center;">Visezi la o carieră frumoasă. Știm și încurajăm asta. Când părintele face ceea ce îi place, se simte fericit și împlinit și transmite asta copilului. Acum poți bifa task după task în locul special amenajat, în timp ce copilul tău se bucură de spațiul de joacă.</p>
+        </div>
+        <div class="item" style="width: 40%;display: flex;flex-direction: column;justify-content: center;align-items: center;">
+          <img style="width: 100px; height: 100px;" src="{% static "/ce_este_2.svg" %}" alt="My image"></img>
+          <hr style="width: 100%;text-align: left;margin-left: 0;background-color: black;">
+          <p class="item_title">TE SIMȚI CA ACASĂ</p>
+          <p class="item_description" style="text-align: center;">Aici găsești cam tot ce ai avea nevoie pentru tine și copilul tau: Sisteme de purtare, 2 spații de schimbat scutecul, scaune de masă, bavete de unică folosință, pompă de sân și biberoane, lingurițe bebeluși, balansoare pentru cei mici, olițe și reductoare, spațiu alăptat.</p>
+        </div>
+        <div class="item" style="width: 40%;display: flex;flex-direction: column;justify-content: center;align-items: center;">
+          <img style="width: 100px; height: 100px;" src="{% static "/ce_este_3.svg" %}" alt="My image"></img>
+          <hr style="width: 100%;text-align: left;margin-left: 0;background-color: black;">
+          <p class="item_title">GUSTĂRI MEREU SĂNĂTOASE</p>
+          <p class="item_description" style="text-align: center;">Partenerii noștri prepară cu multă atenție gustările delicioase. Fie ca îți este un pic foame sau ai poftă să te răsfeți cu ceva dulce, nu trebuie să te gândești la siluetă: dulciurile sunt fără zahăr, gustările conțin cele mai bune ingrediente.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="item" style="width: 40%;display: flex;flex-direction: column;justify-content: center;align-items: center;">
+          <img style="width: 100px; height: 100px;" src="{% static "/ce_este_4.svg" %}" alt="My image"></img>
+          <hr style="width: 100%;text-align: left;margin-left: 0;background-color: black;">
+          <p class="item_title">IUBIM CĂRȚILE ȘI CITITORII</p>
+          <p class="item_description" style="text-align: center;">Avem o cameră dedicată lor și vă invităm să o vizitați. Puteți citi în timp ce savurați o cafea sau o puteți lua acasă. Colecția este variată și pentru toate vârstele. Avem o cameră dedicată lor și vă invităm să o vizitați. Puteți citi în timp ce savurați o cafea sau o puteți lua acasă.</p>
+        </div>
+        <div class="item" style="width: 40%;display: flex;flex-direction: column;justify-content: center;align-items: center;">
+          <img style="width: 100px; height: 100px;" src="{% static "/ce_este_5.svg" %}" alt="My image"></img>
+          <hr style="width: 100%;text-align: left;margin-left: 0;background-color: black;">
+          <p class="item_title">ÎNVĂȚĂM ȘI NE JUCĂM</p>
+          <p class="item_description" style="text-align: center;">La CAFERINO învățăm lucruri distractive și ne jucăm învățând. Cursuri de limbi străine, construcții și meșterit, sport, teatru, lectura și pictura sunt doar câteva dintre opțiuni. Adulții se pot bucura și ei de întâlniri pe diverse teme fie ca sunt pentru dezvoltare personală sau profesională.
+          </p>
+        </div>
+        <div class="item" style="width: 40%;display: flex;flex-direction: column;justify-content: center;align-items: center;">
+          <img style="width: 100px; height: 100px;" src="{% static "/ce_este_6.svg" %}" alt="My image"></img>
+          <hr style="width: 100%;text-align: left;margin-left: 0;background-color: black;">
+          <p class="item_title">ÎMPREUNĂ AVEM GRIJĂ DE COMUNITATE</p>
+          <p class="item_description" style="text-align: center;">Ne dorim să avem un impact pozitiv în societate, de aceea participăm activ în campanii umanitare și ajutam pe cei care au mai multă nevoie. Avem grijă de planeta noastră și susținem micile afaceri locale. Avem grijă de planeta noastră.</p>
+        </div>
+      </div>
+    </div>
 </body>
 </html>
