@@ -23,6 +23,22 @@
   padding-right:30px;
 }
 
+.indicators {
+  display: flex;
+  list-style-type: none;
+}
+
+.indicators li {
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  margin: 10px;
+}
+
+.indicators .active {
+  background-color: red;
+}
+
 /* .navbar-nav li a {
     line-height: 50px;
 } */
@@ -75,15 +91,9 @@
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
-        <div class="carousel-inner" style="height: 300px;">
+        <div class="carousel-inner">
           <div class="carousel-item active">
             <img class="d-block w-100" src="{% static "/misiune.jpg" %}" alt="First slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="https://www.ebbekids.com/images/blockbabyeng.jpg" alt="Second slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="https://www.todaysparent.com/wp-content/uploads/2016/06/selling-online-main.jpg" alt="Third slide">
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -96,7 +106,7 @@
         </a>
       </div>
     
-      <div style="margin-left: 200px; margin-right: 200px; align-items: center; margin-top: 50px; text-align: center;">
+      <div style="margin-left: 250px; margin-right: 250px; align-items: center; margin-top: 50px; text-align: center; margin-bottom: 50px;">
         <p style="text-align: center; font-family: 'Montserrat';text-align: center;font-size: 40;color: #CA351E;">MANIFESTO</p>
 
         <p>
@@ -118,33 +128,29 @@
         </p>
       </div>
 
-      <div style="display: flex; height: 300px;">
-        <img style="width: 60%;" src="{% static "/coffee.jpg" %}" alt="My image"></img>
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner" style="height: 300px;">
+      <div style="display: flex;">
+        <div style="    background-color: black;width: 100%;" id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
                 <div class="carousel-item active">
-                Hello1
-                </div>
-                <div class="carousel-item">
-                Hello2
-                </div>
-                <div class="carousel-item">
-                Hello3
+                  <div style="display: flex;">
+                    <img style="width: 55%; height: intrinsic;" src="{% static "/coffee.jpg" %}" alt="My image"></img>
+                    <div style="display: flex;flex-direction: column;justify-content: center; width: 45%; padding-left: 20px;">
+                      <div style="display: flex; align-items: center;">
+                      <hr style="    width: 10%;text-align: left;margin-left: 0;background-color: white;">
+                      <p style="width: 85%;font-family: Montserrat; font-size: 60px; color: white; margin-left: 20px; margin-bottom: 0rem;">CALITATE</p>
+                      </div>
+                      <p style="width: 70%; font-family: Roboto; font-size: 18px; color: white; margin-bottom: 0pm;">Dorim să ne autodepășim, astfel încât să fim în fiecare zi cea mai bună variantă a noastră. Ne bucurăm de relațiile și timpul de calitate pe care le aducem în viața noastră. Nu suntem perfecți, însă ne dorim ce este mai bun pentru noi și pentru copiii noștri.</p>
+                      <hr style="width: 70%;text-align: left;margin-left: 0;background-color: white;">
+                      <div class="indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                      </ul>
+                    </div>
+
+                  </div>
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
             </div>
       </div>
 </body>
