@@ -23,4 +23,5 @@ from caferino import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^homepage/', include('cfhomepage.urls')),
+    url(r'^ateliere/', include('ateliere.urls')),
 ]
