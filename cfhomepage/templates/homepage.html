@@ -25,7 +25,7 @@
 
 .indicators {
   display: flex;
-  list-style-type: none;
+  /* list-style-type: none; */
 }
 
 .indicators li {
@@ -52,6 +52,10 @@
   flex: 1; /* added */
 }
 
+.row2 {
+  display: flex;
+}
+
 .item {
   flex: 1; /* added */
   padding: 30px;
@@ -64,14 +68,160 @@
 .item_title {
   height: 30px;
 }
+
+.images_subtext {
+  margin-top: 10px;
+  text-align: center;
+  font-family: Monsserat;
+  font-size: 26px;
+}
     </style>
+
+<script>
+  // Initialize and add the map
+  function initMap() {
+    // The location of Uluru
+
+    var uluru = {lat: 44.45672, lng: 26.11526};
+    // The map, centered at Uluru
+    var map = new google.maps.Map(
+        document.getElementById('map'), {zoom: 4, center: uluru});
+    // The marker, positioned at Uluru
+    var marker = new google.maps.Marker({position: uluru, map: map});
+    console.log("hello!");
+  }
+
+  function changeCarousel1() {
+    var mainElement = document.getElementById("carousel_main_image");
+    var titleElement = document.getElementById("carousel_title");
+    var contentElement = document.getElementById("carousel_content");
+
+    var element1 = document.getElementById("carousel1");
+    var element2 = document.getElementById("carousel2");
+    var element3 = document.getElementById("carousel3");
+    var element4 = document.getElementById("carousel4");
+    var element5 = document.getElementById("carousel5");
+
+    element1.classList.add("active");
+    element2.classList.remove("active");
+    element3.classList.remove("active");
+    element4.classList.remove("active");
+    element5.classList.remove("active");
+
+    titleElement.innerHTML = "CALITATE";
+    contentElement.innerHTML = "Dorim să ne autodepășim, astfel încât să fim în fiecare zi cea mai bună variantă a noastră. Ne bucurăm de relațiile și timpul de calitate pe care le aducem în viața noastră. Nu suntem perfecți, însă ne dorim ce este mai bun pentru noi și pentru copiii noștri.";
+
+    mainElement.src = "/static/coffee.jpg";
+  }
+
+  function changeCarousel2() {
+    var mainElement = document.getElementById("carousel_main_image");
+    var titleElement = document.getElementById("carousel_title");
+    var contentElement = document.getElementById("carousel_content");
+    var element1 = document.getElementById("carousel1");
+    var element2 = document.getElementById("carousel2");
+    var element3 = document.getElementById("carousel3");
+    var element4 = document.getElementById("carousel4");
+    var element5 = document.getElementById("carousel5");
+
+    element1.classList.remove("active");
+    element2.classList.add("active");
+    element3.classList.remove("active");
+    element4.classList.remove("active");
+    element5.classList.remove("active");
+
+    titleElement.innerHTML = "PRIETENIE";
+    contentElement.innerHTML = "Oferim mereu un zâmbet cald, o vorbă bună și multă înțelegere. Dorim să creăm un mediu prietenos unde să ne simțim confortabil cu alegerile noastre.";
+
+    mainElement.src = "/static/prietenie.jpg";
+  }
+
+  function changeCarousel3() {
+    var mainElement = document.getElementById("carousel_main_image");
+    var titleElement = document.getElementById("carousel_title");
+    var contentElement = document.getElementById("carousel_content");
+
+    var element1 = document.getElementById("carousel1");
+    var element2 = document.getElementById("carousel2");
+    var element3 = document.getElementById("carousel3");
+    var element4 = document.getElementById("carousel4");
+    var element5 = document.getElementById("carousel5");
+
+    element1.classList.remove("active");
+    element2.classList.remove("active");
+    element3.classList.add("active");
+    element4.classList.remove("active");
+    element5.classList.remove("active");
+
+    titleElement.innerHTML = "AUTENTICITATE";
+    contentElement.innerHTML = "Suntem unici și speciali, fiecare cu aspirațiile și nevoile lui pe care le îmbrățișăm alături de copiii noștri.";
+
+    mainElement.src = "/static/autenticitate.jpg";
+  }
+
+  function changeCarousel4() {
+    var mainElement = document.getElementById("carousel_main_image");
+    var titleElement = document.getElementById("carousel_title");
+    var contentElement = document.getElementById("carousel_content");
+
+    var element1 = document.getElementById("carousel1");
+    var element2 = document.getElementById("carousel2");
+    var element3 = document.getElementById("carousel3");
+    var element4 = document.getElementById("carousel4");
+    var element5 = document.getElementById("carousel5");
+
+    element1.classList.remove("active");
+    element2.classList.remove("active");
+    element3.classList.remove("active");
+    element4.classList.add("active");
+    element5.classList.remove("active");
+
+    titleElement.innerHTML = "IMPLICARE";
+    contentElement.innerHTML = "Suntem atenți la cei care au mai multă nevoie de ajutor și suntem gata să oferim sprijinul nostru. Visăm la o comunitate mai bună.";
+
+    mainElement.src = "/static/implicare.jpg";
+  }
+
+  function changeCarousel5() {
+    var mainElement = document.getElementById("carousel_main_image");
+    var titleElement = document.getElementById("carousel_title");
+    var contentElement = document.getElementById("carousel_content");
+
+    var element1 = document.getElementById("carousel1");
+    var element2 = document.getElementById("carousel2");
+    var element3 = document.getElementById("carousel3");
+    var element4 = document.getElementById("carousel4");
+    var element5 = document.getElementById("carousel5");
+
+    element1.classList.remove("active");
+    element2.classList.remove("active");
+    element3.classList.remove("active");
+    element4.classList.remove("active");
+    element5.classList.add("active");
+
+    titleElement.innerHTML = "ENTUZIASM";
+    contentElement.innerHTML = "Ne place sa fim aici! Ne bucurăm de fiecare moment petrecut împreună.";
+
+    mainElement.src = "/static/entuziasm.jpg";
+  }
+
+      </script>
+      <!--Load the API from the specified URL
+      * The async attribute allows the browser to render the page while the API loads
+      * The key parameter will contain your own API key (which is not needed for this tutorial)
+      * The callback parameter executes the initMap() function
+      -->
+      <script defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkDklZhYaxOSxfhYU3_B8cFndJjxPHr20&callback=initMap">
+      </script>
+
 </head>
-<body>
+<body style="background-image: url('/static/back_HP.png');">
     
-    <div style="width: 100%; height: 100%; background-position:center; background-repeat:no-repeat; position: absolute; background-image: url('/static/back_HP.svg'); z-index: -1;">
+    <!-- <div style="width: 100%; height: 100%; background-position:center; background-repeat:reap; position: absolute; background-image: url('/static/back_HP.png'); z-index: -1;">
     </div>
     <div style="width: 100%; height: 100%; background-position:center; background-repeat:no-repeat; position: absolute; background-color: #FCF3EE; z-index: -1; opacity: 0.5;">
-    </div>
+    </div> -->
     <nav class="navbar navbar-expand-sm navbar-light">
         <div class="mx-auto d-sm-flex d-block flex-sm-nowrap">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
@@ -115,7 +265,13 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="d-block w-100" src="{% static "/misiune.jpg" %}" alt="First slide">
+            <img class="d-block w-100" src="{% static "/misiune.png" %}" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="{% static "/hero_viziune.png" %}" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="{% static "/hero_curs.png" %}" alt="First slide">
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -155,18 +311,19 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                   <div style="display: flex;">
-                    <img style="width: 55%; height: intrinsic;" src="{% static "/coffee.jpg" %}" alt="My image"></img>
+                    <img id="carousel_main_image"style="width: 55%; height: intrinsic;" src="{% static "/coffee.jpg" %}" alt="My image"></img>
                     <div style="display: flex;flex-direction: column;justify-content: center; width: 45%; padding-left: 20px;">
                       <div style="display: flex; align-items: center;">
-                      <hr style="    width: 10%;text-align: left;margin-left: 0;background-color: white;">
-                      <p style="width: 85%;font-family: Montserrat; font-size: 60px; color: white; margin-left: 20px; margin-bottom: 0rem;">CALITATE</p>
+                      <hr style="width: 10%;text-align: left;margin-left: 0;background-color: white;">
+                      <p id="carousel_title" style="width: 85%;font-family: Montserrat; font-size: 60px; color: white; margin-left: 20px; margin-bottom: 0rem;">CALITATE</p>
                       </div>
-                      <p style="width: 70%; font-family: Roboto; font-size: 18px; color: white; margin-bottom: 0pm;">Dorim să ne autodepășim, astfel încât să fim în fiecare zi cea mai bună variantă a noastră. Ne bucurăm de relațiile și timpul de calitate pe care le aducem în viața noastră. Nu suntem perfecți, însă ne dorim ce este mai bun pentru noi și pentru copiii noștri.</p>
-                      <hr style="width: 70%;text-align: left;margin-left: 0;background-color: white;">
+                      <p id="carousel_content" style="width: 70%; height: 20%; font-family: Roboto; font-size: 18px; color: white; margin-bottom: 0pm;">Dorim să ne autodepășim, astfel încât să fim în fiecare zi cea mai bună variantă a noastră. Ne bucurăm de relațiile și timpul de calitate pe care le aducem în viața noastră. Nu suntem perfecți, însă ne dorim ce este mai bun pentru noi și pentru copiii noștri.</p>
                       <div class="indicators">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        <li id="carousel1" data-target="#carouselExampleIndicators" data-slide-to="0" onclick="changeCarousel1()" class="active"></li>
+                        <li id="carousel2" data-target="#carouselExampleIndicators" data-slide-to="1" onclick="changeCarousel2()"></li>
+                        <li id="carousel3" data-target="#carouselExampleIndicators" data-slide-to="2" onclick="changeCarousel3()"></li>
+                        <li id="carousel4" data-target="#carouselExampleIndicators" data-slide-to="3" onclick="changeCarousel4()"></li>
+                        <li id="carousel5" data-target="#carouselExampleIndicators" data-slide-to="3" onclick="changeCarousel5()"></li>
                       </ul>
                     </div>
 
@@ -229,5 +386,65 @@
         </div>
       </div>
     </div>
+    <div style="display: flex; justify-content: center;">
+        <div style="padding: 10px;">
+          <img src="{% static "/reguli.jpg" %}" alt="My image"></img>
+          <p class="images_subtext">Regulile casei</p>
+        </div>
+        <div style="padding: 10px;">
+          <img src="{% static "/covid.jpg" %}" alt="My image"></img>
+          <p class="images_subtext">Masuri covid</p>
+        </div>
+        <div style="padding: 10px;">
+          <img src="{% static "/proiecte_sociale.jpg" %}" alt="My image"></img>
+          <p class="images_subtext">Proiecte sociale</p>
+        </div>
+      </div>
+    </div>
+
+    <div class='row' style="display: flex; justify-content: center; background-color: white; padding: 20px;">
+      <div class='col-xs-6' style="margin-right: 12px;">
+        <img src="{% static "/image_render_1.jpg" %}" alt="My image"></img>
+      </div>
+      <div class='col-xs-6'>
+          <div class='row2'>
+              <div class='col-xs-6' style="margin: 0px 12px 12px 12px">
+                <img src="{% static "/image_render_2.jpg" %}" alt="My image"></img>
+              </div>
+              <div class='col-xs-6' style="margin: 0px 12px 12px 12px">
+                <img src="{% static "/image_render_3.jpg" %}" alt="My image"></img>
+              </div>
+
+          </div>
+          <div class='row2'>
+              <div class='col-xs-6' style="margin: 0px 12px 12px 12px">
+                <img src="{% static "/image_render_5.jpg" %}" alt="My image"></img>
+              </div>
+              <div class='col-xs-6' style="margin: 0px 12px 12px 12px">
+                <img src="{% static "/image_render_6.jpg" %}" alt="My image"></img>
+              </div>
+          </div>
+          <div class="row2">
+            <div class='col-xs-6' style="margin: 0px 12px 12px 12px">
+              <img src="{% static "/image_render_4.jpg" %}" alt="My image"></img>
+            </div>
+            <div class='col-xs-6' style="margin: 0px 12px 12px 12px">
+              <img src="{% static "/image_render_7.jpg" %}" alt="My image"></img>
+            </div>
+          </div>
+      </div>
+  </div>
+
+  <div id="map" style="width: 100%; height: 400px;"></div>
+  <div style="display: flex; align-items: center; padding: 50px;">
+    <img src="{% static "/logo_caferino.svg" %}" style="width: 100px; height: 100px; margin-right: 100px;" alt="My image"></img>
+    <div style="display: flex; flex-direction: column; width: 40%;">
+      <a>Ateliere</a>
+      <a>Calendar</a>
+      <a>Blog</a>
+      <a>Club</a>
+    </div>
+    <div>Copyright ©2020 All rights reserved | Tailored by Ruffle.ro</div>
+  </div>
 </body>
 </html>
