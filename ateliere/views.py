@@ -4,3 +4,6 @@ from django.shortcuts import render
 
 def index(request):
     return render(request, 'ateliere.html', {})
+
+def detaliu(request):
+    return render(request, 'ateliere_detaliu.html', {})

@@ -34,9 +34,17 @@
                     border-top-right-radius: 5px;
                 }
 
-                .separator {
-                    height: 7px;
-                    background-color: #E6A139;
+                .content {
+                    text-align: center;
+                    font-family: Roboto;
+                    font-size: 14px;
+                    margin-top: 40px;
+                    height: 160px;
+                }
+
+                .row {
+                    display: flex;
+                    justify-content: center;
                 }
 
                 .row_element {
@@ -48,47 +56,11 @@
                     background-color: white;
                     border-radius: 25px;
                 }
-
-                .title {
-                    text-align: center;
-                    font-family: Montserrat;
-                    font-size: 26px;
-                    height: 70px;
-                }
-
-                .category {
-                    background-color: #E6A139;
-                    text-align: center;
-                    margin-right: 40px;
-                    margin-left: 40px;
-                    font-family: Montserrat;
-                    font-size: 16px;
-                    color: white;
-                    border-radius: 5px;
-                }
-
-                .content {
-                    text-align: center;
-                    font-family: Roboto;
-                    font-size: 14px;
-                    margin-top: 40px;
-                    height: 160px;
-                }
-
-                .find_out_more {
-                    background-color: #E6A139;
-                    font-family: Montserrat;
-                    font-size: 12px;
-                    text-align: center;
-                    color: white;
-                    border-bottom-left-radius: 5px;
-                    border-bottom-right-radius: 5px;
-                }
      </style>
 
     </head>
     <body style="background-image: url('/static/back_HP.png'); background-color: #FCF3EE;">
-        <nav class="navbar navbar-expand-sm navbar-light">
+        <nav class="navbar navbar-expand-sm navbar-light" style="box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.05);">
             <div class="mx-auto d-sm-flex d-block flex-sm-nowrap">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -122,42 +94,47 @@
                 </div>
             </div>
         </nav>
-        <div>
-            <img class="d-block w-100" src="{% static "/hero_ateliere.png" %}" alt="First slide">
-        </div>
 
-        <div style="display: flex; flex-direction: column; justify-content: center; margin-top: 20px;">
-            <div class="row"> <!-- row -->
-                <div class="row_element">
-                    <img class="image_element" src="{% static "/antreprenorilor.jpg" %}" alt="First slide">
-                    <div class="separator"></div>
-                    <p class="title">INTALNIRILE ANTREPRENORILOR</p>
-                    <div class="category">Ateliere pentru adulti</div>
-                    <div class="content">Stim cu este sa fii la inceput de drum, sa ai nevoie de furnizori, de un loc unde sa lucrezi, de un sfat sau o parere, de experienta cuiva care 	
-                        a reusit sa isi porneasca businessul</div>
-                    <div class="find_out_more">afla mai multe</div>
-                </div>
-                <div class="row_element">
-                    <img class="image_element" src="{% static "/antreprenorilor.jpg" %}" alt="First slide">
-                    <div class="separator"></div>
-                    <p class="title">LIFE COACHING (MER)</p>
-                    <div class="category">ATELIER PENTRU COPII</div>
-                    <div class="content">Stim cu este sa fii la inceput de drum, sa ai nevoie de furnizori, de un loc unde sa lucrezi, de un sfat sau o parere, de experienta cuiva care</div>
-                    <div class="find_out_more"><a href="detaliu">afla mai multe</a></div>
-                </div>
-                <div class="row_element">
-                    <img class="image_element" src="{% static "/antreprenorilor.jpg" %}" alt="First slide">
-                    <div class="separator"></div>
-                    <p class="title">CURSURI JAPONEZA</p>
-                    <div class="category">ATELIER PENTRU ADULȚI</div>
-                    <div class="content">Stim cu este sa fii la inceput de drum, sa ai nevoie de furnizori, de un loc unde sa lucrezi, de un sfat sau o parere, de experienta cuiva care</div>
-                    <div class="find_out_more">afla mai multe</div>
+        <div>
+            <div style="display: flex; margin-top: 150px; width: 70%; margin-left: auto; margin-right: auto;">
+                <img style="height: 400px;" src="{% static "/antreprenorilor.jpg" %}">
+                <div style="margin-left: 30px;">
+                    <div style="font-family: Montserrat; font-size: 40px; font-weight: lighter;">ÎNTÂLNIRILE ANTEPRENORILOR</div>
+                    <div style="height: 5px; background-color: #E6A139;"></div>
+                    <p style="font-family: Montserrat; font-size: 16px; font-weight: bold;">ATELIER PENTRU ADULȚI</p>
+                    <div style="font-family: Roboto; font-size: 14px;">
+                        Stim cu este sa fii la inceput de drum, sa ai nevoie de furnizori, de un loc unde sa lucrezi, de un sfat sau o parere, de experienta cuiva care a reusit sa isi porneasca businessul sau pur si simplu sa vorbesti cu cineva care te poate intelege pentru ca este sau a fost acolo. Asa ca, propunem sa ne intalnim toti la CAFERINO. Avem aici locul potrivit pentru ca parintii sa poata transforma visele in realitate. Si toate astea in timp ce copilul se joaca sau participa la un curs.
+                    </div>
+                    <div style="font-family: Montserrat; font-size: 20px; font-weight: 900; margin-top: 20px;">75 lei / persoana</div>
+                    <div style="background-color: #F13C37; width: 50%; text-align: center; color: white; margin-top: 20px; font-family: Montserrat; font-size: 16px;">Inscrie-te</div>
                 </div>
             </div>
-            <div> <!-- row -->
-                <div></div>
-                <div></div>
-                <div></div>
+
+            <div style="width: 70%; margin-left: auto; margin-right: auto;">
+                <div style="display: flex; flex-direction: column; justify-content: center; margin-top: 20px;">
+                    <div class="row"> <!-- row -->
+                        <div class="row_element">
+                            <img class="image_element" src="{% static "/antreprenorilor.jpg" %}" alt="First slide">
+                        </div>
+                        <div class="row_element">
+                            <img class="image_element" src="{% static "/antreprenorilor.jpg" %}" alt="First slide">
+                        </div>
+                        <div class="row_element">
+                            <img class="image_element" src="{% static "/antreprenorilor.jpg" %}" alt="First slide">
+                        </div>
+                    </div>
+                    <div class="row"> <!-- row -->
+                        <div class="row_element">
+                            <img class="image_element" src="{% static "/antreprenorilor.jpg" %}" alt="First slide">
+                        </div>
+                        <div class="row_element">
+                            <img class="image_element" src="{% static "/antreprenorilor.jpg" %}" alt="First slide">
+                        </div>
+                        <div class="row_element">
+                            <img class="image_element" src="{% static "/antreprenorilor.jpg" %}" alt="First slide">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
