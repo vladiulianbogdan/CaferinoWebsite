@@ -24,4 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^homepage/', include('cfhomepage.urls')),
     url(r'^ateliere/', include('ateliere.urls')),
+    url(r'^blog/', include('blog.urls')),
+    url(r'^calendar/', include('caferinocalendar.urls')),
 ]

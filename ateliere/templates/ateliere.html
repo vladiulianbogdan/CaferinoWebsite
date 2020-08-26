@@ -10,17 +10,17 @@
 
     <style>
                 .navbar {
-                height: 100px;
+                    height: 100px;
                 }
 
                 .sex {
-                transform: translateY(calc(50% - 20px));
-                z-index: 10;
+                    transform: translateY(calc(50% - 20px));
+                    z-index: 10;
                 }
 
                 .navbar-nav > li{
-                padding-left:30px;
-                padding-right:30px;
+                    padding-left:30px;
+                    padding-right:30px;
                 }
 
                 .row {
@@ -88,7 +88,7 @@
 
     </head>
     <body style="background-image: url('/static/back_HP.png'); background-color: #FCF3EE;">
-        <nav class="navbar navbar-expand-sm navbar-light">
+        <nav class="navbar navbar-expand-sm navbar-light" style="box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.05);">
             <div class="mx-auto d-sm-flex d-block flex-sm-nowrap">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -102,10 +102,10 @@
                             <a class="nav-link" href="/ateliere/">Ateliere</a>
                         </li>
                         <li class="nav-item navbar-collapse">
-                            <a class="nav-link" href="#">Blog</a>
+                            <a class="nav-link" href="/blog/">Blog</a>
                         </li>
                             
-                            <div style="background-color: white; z-index: 100; display: flex; width: 240px; height: 220px; justify-content: center; align-items: center;">
+                            <div style="background-color: white; z-index: 100; display: flex; width: 240px; height: 220px; justify-content: center; align-items: center; box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.05);">
                               {% load static %}
                               <img class="sex" style="width: 100px; height: 100px;" src="{% static "/logo_caferino.svg" %}" alt="My image">
                             </div>
@@ -127,38 +127,26 @@
         </div>
 
         <div style="display: flex; flex-direction: column; justify-content: center; margin-top: 20px;">
-            <div class="row"> <!-- row -->
+            {% for item in events %}
+                {% if forloop.counter0|divisibleby:3 %}
+                    <div class="row"> <!-- row -->
+                {% endif %}
+            
                 <div class="row_element">
-                    <img class="image_element" src="{% static "/antreprenorilor.jpg" %}" alt="First slide">
+                    <img class="image_element" src="/{{ item.image }}" alt="First slide">
                     <div class="separator"></div>
-                    <p class="title">INTALNIRILE ANTREPRENORILOR</p>
-                    <div class="category">Ateliere pentru adulti</div>
-                    <div class="content">Stim cu este sa fii la inceput de drum, sa ai nevoie de furnizori, de un loc unde sa lucrezi, de un sfat sau o parere, de experienta cuiva care 	
-                        a reusit sa isi porneasca businessul</div>
+                    <p class="title"> {{ item.title }}</p>
+                    <div class="category"> {{ item.category }}</div>
+                    <div class="content">  {{item.content}} </div>
                     <div class="find_out_more">afla mai multe</div>
                 </div>
-                <div class="row_element">
-                    <img class="image_element" src="{% static "/antreprenorilor.jpg" %}" alt="First slide">
-                    <div class="separator"></div>
-                    <p class="title">LIFE COACHING (MER)</p>
-                    <div class="category">ATELIER PENTRU COPII</div>
-                    <div class="content">Stim cu este sa fii la inceput de drum, sa ai nevoie de furnizori, de un loc unde sa lucrezi, de un sfat sau o parere, de experienta cuiva care</div>
-                    <div class="find_out_more"><a href="detaliu">afla mai multe</a></div>
-                </div>
-                <div class="row_element">
-                    <img class="image_element" src="{% static "/antreprenorilor.jpg" %}" alt="First slide">
-                    <div class="separator"></div>
-                    <p class="title">CURSURI JAPONEZA</p>
-                    <div class="category">ATELIER PENTRU ADULȚI</div>
-                    <div class="content">Stim cu este sa fii la inceput de drum, sa ai nevoie de furnizori, de un loc unde sa lucrezi, de un sfat sau o parere, de experienta cuiva care</div>
-                    <div class="find_out_more">afla mai multe</div>
-                </div>
-            </div>
-            <div> <!-- row -->
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
+
+                {% if forloop.counter|divisibleby:3 %} 
+                    </div>
+                {% endif %}
+
+            {% endfor %}
+
         </div>
 
         <div style="display: flex; align-items: center; padding: 50px;">
