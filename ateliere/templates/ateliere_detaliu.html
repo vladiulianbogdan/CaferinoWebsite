@@ -53,8 +53,12 @@
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
-                    background-color: white;
                     border-radius: 25px;
+                }
+
+                a {
+                    color:inherit;
+                    text-decoration: none;
                 }
      </style>
 
@@ -97,42 +101,54 @@
 
         <div>
             <div style="display: flex; margin-top: 150px; width: 70%; margin-left: auto; margin-right: auto;">
-                <img style="height: 400px;" src="{% static "/antreprenorilor.jpg" %}">
+                <img style="height: 400px;" src="/{{ event.image }}" %}">
                 <div style="margin-left: 30px;">
-                    <div style="font-family: Montserrat; font-size: 40px; font-weight: lighter;">ÎNTÂLNIRILE ANTEPRENORILOR</div>
+                    <div style="font-family: Montserrat; font-size: 40px; font-weight: lighter;">{{ event.title }}</div>
                     <div style="height: 5px; background-color: #E6A139;"></div>
-                    <p style="font-family: Montserrat; font-size: 16px; font-weight: bold;">ATELIER PENTRU ADULȚI</p>
+                    <p style="font-family: Montserrat; font-size: 16px; font-weight: bold;"> {{ event.category }}</p>
                     <div style="font-family: Roboto; font-size: 14px;">
-                        Stim cu este sa fii la inceput de drum, sa ai nevoie de furnizori, de un loc unde sa lucrezi, de un sfat sau o parere, de experienta cuiva care a reusit sa isi porneasca businessul sau pur si simplu sa vorbesti cu cineva care te poate intelege pentru ca este sau a fost acolo. Asa ca, propunem sa ne intalnim toti la CAFERINO. Avem aici locul potrivit pentru ca parintii sa poata transforma visele in realitate. Si toate astea in timp ce copilul se joaca sau participa la un curs.
+                        {{ event.content }}
                     </div>
-                    <div style="font-family: Montserrat; font-size: 20px; font-weight: 900; margin-top: 20px;">75 lei / persoana</div>
-                    <div style="background-color: #F13C37; width: 50%; text-align: center; color: white; margin-top: 20px; font-family: Montserrat; font-size: 16px;">Inscrie-te</div>
+                    <div style="font-family: Montserrat; font-size: 20px; font-weight: 900; margin-top: 20px;">{{ event.price }} lei / persoana</div>
+                    <div style="background-color: #F13C37; width: 50%; text-align: center; color: white; margin-top: 20px; font-family: Montserrat; font-size: 16px;"><a href="http://127.0.0.1:8000/ateliere/register/{{event.id}}/">Inscrie-te</a></div>
                 </div>
             </div>
 
             <div style="width: 70%; margin-left: auto; margin-right: auto;">
                 <div style="display: flex; flex-direction: column; justify-content: center; margin-top: 20px;">
                     <div class="row"> <!-- row -->
+                        {% if event.image1 %}
                         <div class="row_element">
-                            <img class="image_element" src="{% static "/antreprenorilor.jpg" %}" alt="First slide">
+                            <img class="image_element" src="/{{ event.image1 }}">
                         </div>
+                        {% endif %}
+                        {% if event.image2 %}
                         <div class="row_element">
-                            <img class="image_element" src="{% static "/antreprenorilor.jpg" %}" alt="First slide">
+                            <img class="image_element" src="/{{ event.image2 }}">
                         </div>
+                        {% endif %}
+                        {% if event.image3 %}
                         <div class="row_element">
-                            <img class="image_element" src="{% static "/antreprenorilor.jpg" %}" alt="First slide">
+                            <img class="image_element" src="/{{ event.image3 }}">
                         </div>
+                        {% endif %}
                     </div>
                     <div class="row"> <!-- row -->
+                        {% if event.image4 %}
                         <div class="row_element">
-                            <img class="image_element" src="{% static "/antreprenorilor.jpg" %}" alt="First slide">
+                            <img class="image_element" src="/{{ event.image4 }}"}">
                         </div>
+                        {% endif %}
+                        {% if event.image5 %}
                         <div class="row_element">
-                            <img class="image_element" src="{% static "/antreprenorilor.jpg" %}" alt="First slide">
+                            <img class="image_element" src="/{{ event.image5 }}">
                         </div>
+                        {% endif %}
+                        {% if event.image6 %}
                         <div class="row_element">
-                            <img class="image_element" src="{% static "/antreprenorilor.jpg" %}" alt="First slide">
+                            <img class="image_element" src="/{{ event.image6 }}">
                         </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>

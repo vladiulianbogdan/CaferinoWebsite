@@ -1,7 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from .models import Event  # Import the model classes we just wrote.
+from .models import Event
+from .models import Participation
 
 def index(request):
     events = Event.objects.all()
@@ -11,19 +12,19 @@ def index(request):
 
     return render(request, 'ateliere.html', context)
 
-def detaliu(request):
-    return render(request, 'ateliere_detaliu.html', {})
+def detaliu(request, id):
+    event = Event.objects.get(id=id)
+
+    return render(request, 'ateliere_detaliu.html', {'event': event})
 
 def register(request, id):
+    event = Event.objects.get(id=id)
+
     print(request.method)
-    if (request.method == "GET") :
-        return render(request, 'register.html', {})
+    if (request.method == "GET"):
+        return render(request, 'register.html', {'event': event})
     elif (request.method == "POST"):
-        b = Blog(name='Beatles Blog', tagline='All the latest Beatles news.')
+        b = Participation(event_id=event, name=request.POST.get("nume", "")  + " " + request.POST.get("prenume", ""), email=request.POST.get("email", ""), phone=request.POST.get("telefon", ""))
         b.save()
-        print(request.POST.get("nume", ""))
-        print(request.POST.get("prenume", ""))
-        print(request.POST.get("email", ""))
-        print(request.POST.get("telefon", ""))
 
         return render(request, 'register.html', {})

@@ -1,3 +1,4 @@
+<!DOCTYPE HTML>
 <html>
     <head>
                 <!-- CSS only -->
@@ -7,6 +8,38 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <script>
+    function validateForm() {
+        console.log("called")
+        var value = document.forms["form"]["nume"].value;
+        if (value == "") {
+            alert("Nu ati completat campul 'nume'");
+            return false;
+        }
+
+        value = document.forms["form"]["prenume"].value;
+        if (value == "") {
+            alert("Nu ati completat campul 'prenume'");
+            return false;
+        }
+
+        value = document.forms["form"]["email"].value;
+        if (value == "") {
+            alert("Nu ati completat campul 'email'");
+            return false;
+        }
+
+        value = document.forms["form"]["telefon"].value;
+        if (value == "") {
+            alert("Nu ati completat campul 'telefon'");
+            return false;
+        }
+
+        return true;
+    }
+
+    </script>
 
     <style>
                 .navbar {
@@ -61,25 +94,27 @@
             </div>
         </nav>
 
+        
         <div style="display: flex; justify-content: center; margin-top: 200px;">
-            <form action="/calendar/register/1/" method="post">
+            <form action="/ateliere/register/1/" method="post" onsubmit="return validateForm();" name="form">
                 {% csrf_token %}
+                <p style="text-align: center;">Inregistreaza-te pentru evenimentul {{ event.title }}</p>
                 <table>
                     <tr>
                     <td align="right">Nume </td>
-                    <td><input type="text" name="nume" size="20" /></td>
+                    <td><input style="margin: 5px;" type="text" name="nume" size="20" oninvalid="setCustomValidity('Introduceti numele!')" /></td>
                     </tr>
                     <tr>
                     <td align="right">Prenume </td>
-                    <td><input type="text" name="prenume" size="20" /></td>
+                    <td><input style="margin: 5px;" type="text" name="prenume" size="20" oninvalid="setCustomValidity('Introduceti prenumele!')" > </input</td>
                     </tr>
                     <tr>
                         <td align="right">Email </td>
-                        <td><input type="text" name="email" size="20" /></td>
+                        <td><input style="margin: 5px;" name="email" size="20" type="email"/> </input></td>
                     </tr>
                     <tr>
                         <td align="right">Numar de telefon </td>
-                        <td><input type="text" name="telefon" size="20" /></td>
+                        <td><input style="margin: 5px;" type="text" name="telefon" size="20"> </input></td>
                     </tr>
                     <tr>
                     <td></td>
