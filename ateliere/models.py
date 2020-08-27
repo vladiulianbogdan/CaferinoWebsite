@@ -9,11 +9,17 @@ class Event(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=200)
     image = models.ImageField(upload_to = 'static/')
+    image1 = models.ImageField(upload_to = 'static/', default="", blank=True)
+    image2 = models.ImageField(upload_to = 'static/', default="", blank=True)
+    image3 = models.ImageField(upload_to = 'static/', default="", blank=True)
+    image4 = models.ImageField(upload_to = 'static/', default="", blank=True)
+    image5 = models.ImageField(upload_to = 'static/', default="", blank=True)
+    image6 = models.ImageField(upload_to = 'static/', default="", blank=True)
     category = models.CharField(max_length=200)
     price = models.CharField(max_length=200)
     content = models.TextField()
-    start_date = models.DateTimeField(default=datetime.now, blank=True)
-    end_date = models.DateTimeField(default=datetime.now, blank=True)
+    start_date = models.DateTimeField(default=datetime.now)
+    end_date = models.DateTimeField(default=datetime.now)
 
     def publish_url(self):
         return "http://caferino.com/ateliere/register/" + str(self.id)
@@ -32,14 +38,13 @@ class Event(models.Model):
 
         return format_html(string)
 
-
 class EventAdmin(admin.ModelAdmin):
     list_display = ('title', 'image', 'content', 'start_date', 'end_date', 'publish_url')
     readonly_fields = ['publish_url', 'show_participants']
 
     fieldsets = (
         (None, {
-            'fields': ['title', 'image', 'content', 'start_date', 'end_date', 'category', 'price']
+            'fields': ['title', 'image', "image1", "image2", "image3", "image4", "image5", "image6", 'content', 'start_date', 'end_date', 'category', 'price', ]
         }),
         ('Advanced options', {
             'classes': ('collapse'),
