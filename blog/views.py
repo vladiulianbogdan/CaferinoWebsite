@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from .models import BlogPost  # Import the model classes we just wrote.
+from .models import BlogPost
 
 
 # Create your views here.

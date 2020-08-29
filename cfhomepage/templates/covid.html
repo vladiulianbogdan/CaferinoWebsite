@@ -48,17 +48,23 @@
                 }
 
                 .title {
-                    text-align: center;
                     font-family: Montserrat; 
-                    font-size: 30px; 
+                    font-size: 40px; 
                     font-weight: lighter;
+                    margin-top: 15px;
+                    margin-bottom: 30px;
+                }
+
+                .subtitle {
+                    font-family: Roboto;
+                    font-size: 18px;
+                    font-weight: bold;
+                    margin-top: 30px;
                 }
 
                 .content {
                     font-family: Roboto;
-                    font-size: 14px;
-                    height: 120px;
-                    margin-top: 20px;
+                    font-size: 18px;
                 }
 
                 .readmore {
@@ -75,6 +81,11 @@
                 a {
                     color:inherit;
                     text-decoration: none;
+                }
+                
+                .rule {
+                    text-align: center;
+                    margin-top: 20px;
                 }
      </style>
 
@@ -115,39 +126,39 @@
             </div>
         </nav>
 
-        <div style="display: flex; margin-top: 150px; width: 70%; margin-left: auto; margin-right: auto;">
-            <img style="height: 300px;" src="{% static "/antreprenorilor.jpg" %}">
-            <div style="margin-left: 30px; display: flex; flex-direction: column;">
-                <div style="font-family: Montserrat; font-size: 16px; font-weight: bold;"> {{ blog_posts.0.created_at }} </div>
-                <p style="font-family: Montserrat; font-size: 30px; font-weight: lighter;">{{ blog_posts.0.title }}</p>
-                <div style="font-family: Roboto; font-size: 14px;">
-                    blog_posts.0.content
-                </div>
-                <div class="readmore"><a href="{{blog_posts.0.id}}">citeste tot</a></div>
+        <div>
+            <img class="d-block w-100" src="{% static "/reguli_header.jpg" %}" alt="First slide">
+        </div>
+
+        <div style="width: 40%; margin-left: auto; margin-right: auto; margin-top: 40px;">
+            <div class="rule">
+                <b>1. Verificam temperatura.</b> Accesul in incinta se face doar dupa verificarea temperaturii de catre personalul cafenelei. Nu vom putea primi persoanele cu temperatura peste 37,3C si nici cele care prezinta simtome de gripa sau raceala.
+            </div>
+            <div class="rule">
+                <b>2. Dezinfectare.</b> Fiecare invitat este rugat sa paseasca pe covorasul cu dezinfectant. Chiar si in curte copilasii pun manutele pe jos si ne dorim sa ii protejam.
+            </div>
+            <div class="rule">
+                <b>3. Maini curate.</b> Dezinfectarea mainilor este obligatorie la intrare. De asemenea, acest lucru este posibil ori de cate ori este nevoie folosind recipientele puse la dispozitie. De asemene, incurajam spalatul mainilor cu apa si sapun minimum 20 sec.
+            </div>
+            <div class="rule">
+                <b>4. Distantare sociala.</b> Adultii sunt rugati sa pastreze distanta de minimum 1.5m. Va rugam sa incurajati si copiii sa faca acelasi lucru pe cat posibil (ex. Sa urce pe rand in ansamblul de joaca). Mesele sunt aranjate in asa fel incat sa se pastreze aceasta distanta. Va rugam sa nu le mutate.
+            </div>
+            <div class="rule">
+                <b>5. Dezinfectare repetata.</b> Dezinfectarea se face dupa fiecare grup sau maximum la 4ore. Inainte de a va aseja la o masa, aceasta va fi dezinfectata pt dvs. Jucariile vor fi si ele dezinfectate la maximum 4 ore sau ori de cate ori este necesar. Pot fi situatii in care acestea vor fi inlocuite cu altele pentru a putea fi curatate mai bine.
+            </div>
+            <div class="rule">
+                <b>6. Locurile limitate.</b> Pentru a asigura distantarea sociala, am limitat numarul de locuri din exterior la 20 adulti si 7 copii si in interior 34 adulti (impartiti astfel: 6 in dineing room, 7 in living room, 4 in biblioteca, 7 in restrooom, 8 in playroom) si 10 copii. Din acest motiv, va rugam sa ne contactati inainte de vizita dvs.
+            </div>
+            <div class="rule">
+                <b>7. Datele personale.</b> Conform cerintelor actuale si pentru siguranta dvs, suntem nevoiti sa pastram datele dvs de contact minimum 14 zile in cazul in care este nevoie sa va contactam. Acestea vor fi folosite strict pentru contactul in caz de COVID-19.
+            </div>
+            <div class="rule">
+                <b>8. Masca de protectie.</b> Purtarea masitii de protectie este obligatorie in interior.
+            </div>
+            <div class="rule">
+                <b>9. Plata fara contact.</b> Recomandam plata contactless, prin paypal sau prin tranfer bancar astfel incat sa minimizam riscurile.
             </div>
         </div>
-
-        <div style="display: flex; flex-direction: column; justify-content: center; margin-top: 20px;">
-            {% for item in blog_posts|slice:"1:" %}
-                {% if forloop.counter0|divisibleby:3 %}
-                    <div class="row"> <!-- row -->
-                {% endif %}
-            
-                <div class="row_element">
-                    <img class="image_element" src="{% static "/antreprenorilor.jpg" %}" alt="First slide">
-                    <p class="date">{{ item.created_at }}</p>
-                    <div class="title"> {{ item.title }}</div>
-                    <div class="content">{{ item.content }}</div>
-                    <div class="readmore" style="margin-left: auto; margin-right: auto;"><a href="{{ item.id }}">citeste tot</a></div>
-                </div>
-
-                {% if forloop.counter|divisibleby:3 %} 
-                    </div>
-                {% endif %}
-
-            {% endfor %}
-        </div>
-
 
         <div style="display: flex; align-items: center; padding: 50px;">
             <img src="{% static "/logo_caferino.svg" %}" style="width: 100px; height: 100px; margin-right: 100px;" alt="My image"></img>

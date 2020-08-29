@@ -48,17 +48,23 @@
                 }
 
                 .title {
-                    text-align: center;
                     font-family: Montserrat; 
-                    font-size: 30px; 
+                    font-size: 40px; 
                     font-weight: lighter;
+                    margin-top: 15px;
+                    margin-bottom: 30px;
+                }
+
+                .subtitle {
+                    font-family: Roboto;
+                    font-size: 18px;
+                    font-weight: bold;
+                    margin-top: 30px;
                 }
 
                 .content {
                     font-family: Roboto;
-                    font-size: 14px;
-                    height: 120px;
-                    margin-top: 20px;
+                    font-size: 18px;
                 }
 
                 .readmore {
@@ -115,39 +121,26 @@
             </div>
         </nav>
 
-        <div style="display: flex; margin-top: 150px; width: 70%; margin-left: auto; margin-right: auto;">
-            <img style="height: 300px;" src="{% static "/antreprenorilor.jpg" %}">
-            <div style="margin-left: 30px; display: flex; flex-direction: column;">
-                <div style="font-family: Montserrat; font-size: 16px; font-weight: bold;"> {{ blog_posts.0.created_at }} </div>
-                <p style="font-family: Montserrat; font-size: 30px; font-weight: lighter;">{{ blog_posts.0.title }}</p>
-                <div style="font-family: Roboto; font-size: 14px;">
-                    blog_posts.0.content
-                </div>
-                <div class="readmore"><a href="{{blog_posts.0.id}}">citeste tot</a></div>
-            </div>
+        <div>
+            <img class="d-block w-100" src="{% static "/proiecte_sociale_cafea.png" %}" alt="First slide">
         </div>
 
-        <div style="display: flex; flex-direction: column; justify-content: center; margin-top: 20px;">
-            {% for item in blog_posts|slice:"1:" %}
-                {% if forloop.counter0|divisibleby:3 %}
-                    <div class="row"> <!-- row -->
-                {% endif %}
-            
-                <div class="row_element">
-                    <img class="image_element" src="{% static "/antreprenorilor.jpg" %}" alt="First slide">
-                    <p class="date">{{ item.created_at }}</p>
-                    <div class="title"> {{ item.title }}</div>
-                    <div class="content">{{ item.content }}</div>
-                    <div class="readmore" style="margin-left: auto; margin-right: auto;"><a href="{{ item.id }}">citeste tot</a></div>
-                </div>
+        <div style="width: 80%; margin-left: auto; margin-right: auto;  margin-top: 50px;">
+            {% for item in projects %}
 
-                {% if forloop.counter|divisibleby:3 %} 
-                    </div>
-                {% endif %}
+            <div style="display: flex; background-color: white; box-shadow: 0px 0px 5px 1px #bbbbbb; margin-top: 20px;">
+                <img src="/{{ item.image }}" alt="First slide">
+
+                <div style="padding: 20px;">
+                    <p class="title"> {{ item.title }} </p>
+                    <div class="content"> {{ item.abstract }} </div>
+                    <p class="subtitle"> {{ item.subtitle }} </p>
+                    <div class="content">{{ item.description }} </div>
+                </div>
+            </div>
 
             {% endfor %}
         </div>
-
 
         <div style="display: flex; align-items: center; padding: 50px;">
             <img src="{% static "/logo_caferino.svg" %}" style="width: 100px; height: 100px; margin-right: 100px;" alt="My image"></img>

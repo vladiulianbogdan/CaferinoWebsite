@@ -41,7 +41,7 @@
 
 .outer {
   display: flex;
-  min-height: 100%;
+  min-height: 70%;
   flex-direction: column; /* added */
   padding-left: 120px;
   padding-right: 120px;
@@ -58,7 +58,8 @@
 
 .item {
   flex: 1; /* added */
-  padding: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .item_description {
@@ -74,6 +75,11 @@
   text-align: center;
   font-family: Monsserat;
   font-size: 26px;
+}
+
+a {
+  color:inherit;
+  text-decoration: none;
 }
     </style>
 
@@ -387,18 +393,24 @@
       </div>
     </div>
     <div style="display: flex; justify-content: center;">
+      <a href="reguli">
         <div style="padding: 10px;">
           <img src="{% static "/reguli.jpg" %}" alt="My image"></img>
           <p class="images_subtext">Regulile casei</p>
         </div>
+      </a>
+      <a href="covid">
         <div style="padding: 10px;">
           <img src="{% static "/covid.jpg" %}" alt="My image"></img>
           <p class="images_subtext">Masuri covid</p>
         </div>
-        <div style="padding: 10px;">
-          <img src="{% static "/proiecte_sociale.jpg" %}" alt="My image"></img>
-          <p class="images_subtext">Proiecte sociale</p>
-        </div>
+      </a>
+        <a href="proiecte_sociale">
+          <div style="padding: 10px;">
+            <img src="{% static "/proiecte_sociale.jpg" %}" alt="My image"></img>
+            <p class="images_subtext">Proiecte sociale</p>
+          </div>
+        </a>
       </div>
     </div>
 
