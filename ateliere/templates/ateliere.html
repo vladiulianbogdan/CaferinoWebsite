@@ -144,7 +144,11 @@
                         <div class="separator"></div>
                         <p class="title"> {{ item.title }}</p>
                         <div class="category"> {{ item.category }}</div>
-                        <div class="content">  {{item.content}} </div>
+                        {% if item.content|length > 250 %}
+                            <div class="content" style="padding: 5px;" >  {{item.content|slice:"0:250" }}... </div>
+                        {% else %}
+                            <div class="content">  {{item.content }} </div>
+                        {% endif %}
                         <div class="find_out_more"><a href="/ateliere/detaliu/{{item.id}}/">afla mai multe</a></div>
                     </div>
 
