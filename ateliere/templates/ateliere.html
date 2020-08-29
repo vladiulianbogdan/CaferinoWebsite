@@ -132,28 +132,33 @@
             <img class="d-block w-100" src="{% static "/hero_ateliere.png" %}" alt="First slide">
         </div>
 
-        <div style="display: flex; flex-direction: column; justify-content: center; margin-top: 20px;">
-            {% for item in events %}
-                {% if forloop.counter0|divisibleby:3 %}
-                    <div class="row"> <!-- row -->
-                {% endif %}
-            
-                <div class="row_element">
-                    <img class="image_element" src="/{{ item.image }}" alt="First slide">
-                    <div class="separator"></div>
-                    <p class="title"> {{ item.title }}</p>
-                    <div class="category"> {{ item.category }}</div>
-                    <div class="content">  {{item.content}} </div>
-                    <div class="find_out_more"><a href="/ateliere/detaliu/{{item.id}}/">afla mai multe</a></div>
-                </div>
-
-                {% if forloop.counter|divisibleby:3 %} 
+        {% if events|length > 0 %}
+            <div style="display: flex; flex-direction: column; justify-content: center; margin-top: 20px;">
+                {% for item in events %}
+                    {% if forloop.counter0|divisibleby:3 %}
+                        <div class="row"> <!-- row -->
+                    {% endif %}
+                
+                    <div class="row_element">
+                        <img class="image_element" src="/{{ item.image }}" alt="First slide">
+                        <div class="separator"></div>
+                        <p class="title"> {{ item.title }}</p>
+                        <div class="category"> {{ item.category }}</div>
+                        <div class="content">  {{item.content}} </div>
+                        <div class="find_out_more"><a href="/ateliere/detaliu/{{item.id}}/">afla mai multe</a></div>
                     </div>
-                {% endif %}
 
-            {% endfor %}
+                    {% if forloop.counter|divisibleby:3 %} 
+                        </div>
+                    {% endif %}
 
-        </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div style="display: flex; flex-direction: column; justify-content: center; margin-top: 20px; height: 200px; text-align: center;">
+                Momentan nu avem programat nici un atelier.
+            </div>
+        {% endif %}
 
         <div style="display: flex; align-items: center; padding: 50px;">
             <img src="{% static "/logo_caferino.svg" %}" style="width: 100px; height: 100px; margin-right: 100px;" alt="My image"></img>

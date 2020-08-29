@@ -7,7 +7,6 @@ from .models import Participation
 def index(request):
     events = Event.objects.all()
 
-    print(events[0].image)
     context = {'events': events}
 
     return render(request, 'ateliere.html', context)

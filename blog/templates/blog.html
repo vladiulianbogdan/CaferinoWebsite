@@ -115,38 +115,32 @@
             </div>
         </nav>
 
-        <div style="display: flex; margin-top: 150px; width: 70%; margin-left: auto; margin-right: auto;">
-            <img style="height: 300px;" src="{% static "/antreprenorilor.jpg" %}">
-            <div style="margin-left: 30px; display: flex; flex-direction: column;">
-                <div style="font-family: Montserrat; font-size: 16px; font-weight: bold;"> {{ blog_posts.0.created_at }} </div>
-                <p style="font-family: Montserrat; font-size: 30px; font-weight: lighter;">{{ blog_posts.0.title }}</p>
-                <div style="font-family: Roboto; font-size: 14px;">
-                    blog_posts.0.content
-                </div>
-                <div class="readmore"><a href="{{blog_posts.0.id}}">citeste tot</a></div>
-            </div>
-        </div>
-
-        <div style="display: flex; flex-direction: column; justify-content: center; margin-top: 20px;">
-            {% for item in blog_posts|slice:"1:" %}
-                {% if forloop.counter0|divisibleby:3 %}
-                    <div class="row"> <!-- row -->
-                {% endif %}
-            
-                <div class="row_element">
-                    <img class="image_element" src="{% static "/antreprenorilor.jpg" %}" alt="First slide">
-                    <p class="date">{{ item.created_at }}</p>
-                    <div class="title"> {{ item.title }}</div>
-                    <div class="content">{{ item.content }}</div>
-                    <div class="readmore" style="margin-left: auto; margin-right: auto;"><a href="{{ item.id }}">citeste tot</a></div>
-                </div>
-
-                {% if forloop.counter|divisibleby:3 %} 
+        {% if athlete_list|length > 0 %}
+            <div style="display: flex; flex-direction: column; justify-content: center; margin-top: 20px;">
+                {% for item in blog_posts|slice:"1:" %}
+                    {% if forloop.counter0|divisibleby:3 %}
+                        <div class="row"> <!-- row -->
+                    {% endif %}
+                
+                    <div class="row_element">
+                        <img class="image_element" src="{% static "/antreprenorilor.jpg" %}" alt="First slide">
+                        <p class="date">{{ item.created_at }}</p>
+                        <div class="title"> {{ item.title }}</div>
+                        <div class="content">{{ item.content }}</div>
+                        <div class="readmore" style="margin-left: auto; margin-right: auto;"><a href="{{ item.id }}">citeste tot</a></div>
                     </div>
-                {% endif %}
 
-            {% endfor %}
-        </div>
+                    {% if forloop.counter|divisibleby:3 %} 
+                        </div>
+                    {% endif %}
+
+                {% endfor %}
+            </div>
+        {% else %}
+            <div style="text-align: center; height: 700px; margin-top: 100px;">
+                Vom reveni in curand cu mai multe postari!
+            </div>
+        {% endif %}
 
 
         <div style="display: flex; align-items: center; padding: 50px;">
