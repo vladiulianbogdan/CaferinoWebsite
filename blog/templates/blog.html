@@ -116,9 +116,9 @@
         </nav>
 
         {% if blog_posts|length > 0 %}
-            <div style="display: flex; margin-top: 150px; width: 70%; margin-left: auto; margin-right: auto;">
+            <div style="display: flex; margin-top: 150px; width: 70%; margin-left: auto; margin-right: auto; height: auto;">
                 <img style="height: 300px;" src="/{{ blog_posts.0.image }}">
-                <div style="margin-left: 30px; display: flex; flex-direction: column;">
+                <div style="width: 100%; margin-left: 30px; display: flex; flex-direction: column;">
                     <div style="font-family: Montserrat; font-size: 16px; font-weight: bold;"> {{ blog_posts.0.created_at|date:"d.m.Y" }} </div>
                     <p style="font-family: Montserrat; font-size: 30px; font-weight: lighter;">{{ blog_posts.0.title }}</p>
                     <div style="font-family: Roboto; font-size: 14px;">
@@ -131,6 +131,10 @@
                     <div class="readmore"><a href="{{blog_posts.0.id}}">citeste tot</a></div>
                 </div>
             </div>
+
+            {% if blog_posts|length == 1 %}
+                <div style="height: 60%;"></div>
+            {% endif %}
 
             <div style="display: flex; flex-direction: column; justify-content: center; margin-top: 20px;">
                 {% for item in blog_posts|slice:"1:" %}
@@ -159,19 +163,17 @@
                 {% endfor %}
             </div>
         {% else %}
-            <div style="text-align: center; height: auto; margin-top: 50px; margin-bottom: 50px;">
+            <div style="text-align: center; height: 100%; margin-top: 100px;">
                 Vom reveni in curand cu mai multe postari.
             </div>
         {% endif %}
 
-
-        <div style="display: flex; align-items: center; padding: 50px;">
+        <div style="display: flex; align-items: center; padding: 50px; background-color: #FCF3EE; box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.5);">
             <img src="{% static "/logo_caferino.svg" %}" style="width: 100px; height: 100px; margin-right: 100px;" alt="My image"></img>
             <div style="display: flex; flex-direction: column; width: 40%;">
-              <a>Ateliere</a>
-              <a>Calendar</a>
-              <a>Blog</a>
-              <a>Club</a>
+              <a href="/ateliere">Ateliere</a>
+              <a href="/calendar">Calendar</a>
+              <a href="/blog">Blog</a>
             </div>
             <div>Copyright ©2020 All rights reserved | Tailored by Ruffle.ro</div>
           </div>

@@ -22,6 +22,11 @@
                 padding-left:30px;
                 padding-right:30px;
                 }
+
+                a {
+                    color:inherit;
+                    text-decoration: none;
+                }
      </style>
 
     </head>
@@ -61,8 +66,18 @@
             </div>
         </nav>
 
-        <div style="display: flex; justify-content: center; margin-top: 100px;">
+        <div style="display: flex; justify-content: center; margin-top: 100px; height: 100%;">
             <iframe src="https://calendar.google.com/calendar/embed?src=kcc2hftkmhngq06h5sek2k9coo%40group.calendar.google.com&ctz=Europe%2FBucharest" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
         </div>
+
+        <div style="display: flex; align-items: center; padding: 50px; background-color: #FCF3EE; box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.5);">
+            <img src="{% static "/logo_caferino.svg" %}" style="width: 100px; height: 100px; margin-right: 100px;" alt="My image"></img>
+            <div style="display: flex; flex-direction: column; width: 40%;">
+              <a href="/ateliere">Ateliere</a>
+              <a href="/calendar">Calendar</a>
+              <a href="/blog">Blog</a>
+            </div>
+            <div>Copyright ©2020 All rights reserved | Tailored by Ruffle.ro</div>
+          </div>
     </body>
 </html>
