@@ -100,6 +100,8 @@
 
     </head>
     <body style="background-image: url('/static/back_HP.png'); background-color: #FCF3EE;">
+        {% load static %}
+
         <nav class="navbar navbar-expand-sm navbar-light" style="box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.05);">
             <div class="mx-auto d-sm-flex d-block flex-sm-nowrap">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
@@ -118,11 +120,10 @@
                         </li>
                             
                             <div style="background-color: white; z-index: 100; display: flex; width: 240px; height: 220px; justify-content: center; align-items: center; box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.05);">
-                              {% load static %}
                               <img class="sex" style="width: 100px; height: 100px;" src="{% static "/logo_caferino.svg" %}" alt="My image">
                             </div>
                         <li class="nav-item navbar-collapse">
-                            <a class="nav-link" href="#">Calendar</a>
+                            <a class="nav-link" href="/calendar">Calendar</a>
                         </li>
                         <li class="nav-item navbar-collapse">
                             <a class="nav-link" href="#">Club</a>
@@ -253,12 +254,12 @@
         <div style="display: flex; align-items: center; padding: 50px;">
             <img src="{% static "/logo_caferino.svg" %}" style="width: 100px; height: 100px; margin-right: 100px;" alt="My image"></img>
             <div style="display: flex; flex-direction: column; width: 40%;">
-              <a>Ateliere</a>
-              <a>Calendar</a>
-              <a>Blog</a>
+              <a href="/ateliere/">Ateliere</a>
+              <a href="/calendar">Calendar</a>
+              <a href="/blog">Blog</a>
               <a>Club</a>
             </div>
             <div>Copyright ©2020 All rights reserved | Tailored by Ruffle.ro</div>
-          </div>
+        </div>
     </body>
 </html>

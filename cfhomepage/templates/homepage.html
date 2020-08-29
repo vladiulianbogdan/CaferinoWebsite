@@ -1,4 +1,4 @@
-
+{% load static %}
 <html>
 <head>
         <!-- CSS only -->
@@ -212,19 +212,87 @@ a {
     mainElement.src = "/static/entuziasm.jpg";
   }
 
+  function hide() {
+      image_container = document.getElementById("fullscreen_image_container");
+      image_container.style.display = "none";
+      console.log("Hidee!")
+  }
+
+  function showImage1() {
+    image_container = document.getElementById("fullscreen_image_container");
+    image = document.getElementById("fullscreen_image");
+    image.src = "{% static "/image_render_1_big.jpg" %}";
+    image_container.style.display = "flex";
+    console.log(window.pageYOffset);
+    image_container.style.top = window.pageYOffset;
+
+    console.log("Hi!")
+  }
+
+  function showImage2() {
+    image_container = document.getElementById("fullscreen_image_container");
+    image = document.getElementById("fullscreen_image");
+    image.src = "{% static "/image_render_2_big.jpg" %}";
+    image_container.style.display = "flex";
+    image_container.style.top = window.pageYOffset;
+  }
+
+  function showImage3() {
+    image_container = document.getElementById("fullscreen_image_container");
+    image = document.getElementById("fullscreen_image");
+    image.src = "{% static "/image_render_3_big.jpg" %}";
+    image_container.style.display = "flex";
+    image_container.style.top = window.pageYOffset;
+  }
+
+  function showImage4() {
+    image_container = document.getElementById("fullscreen_image_container");
+    image = document.getElementById("fullscreen_image");
+    image.src = "{% static "/image_render_4_big.jpg" %}";
+    image_container.style.display = "flex";
+    image_container.style.top = window.pageYOffset;
+  }
+
+  function showImage5() {
+    image_container = document.getElementById("fullscreen_image_container");
+    image = document.getElementById("fullscreen_image");
+    image.src = "{% static "/image_render_5_big.jpg" %}";
+    image_container.style.display = "flex";
+    image_container.style.top = window.pageYOffset;
+  }
+
+  function showImage6() {
+    image_container = document.getElementById("fullscreen_image_container");
+    image = document.getElementById("fullscreen_image");
+    image.src = "{% static "/image_render_6_big.jpg" %}";
+    image_container.style.display = "flex";
+    image_container.style.top = window.pageYOffset;
+    console.log("Image 6")
+  }
+
+  function showImage7() {
+    image_container = document.getElementById("fullscreen_image_container");
+    image = document.getElementById("fullscreen_image");
+    image.src = "{% static "/image_render_7_big.jpg" %}";
+    image_container.style.display = "flex";
+    image_container.style.top = window.pageYOffset;
+  }
+
       </script>
       <!--Load the API from the specified URL
       * The async attribute allows the browser to render the page while the API loads
       * The key parameter will contain your own API key (which is not needed for this tutorial)
       * The callback parameter executes the initMap() function
       -->
-      <script defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkDklZhYaxOSxfhYU3_B8cFndJjxPHr20&callback=initMap">
+      <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkDklZhYaxOSxfhYU3_B8cFndJjxPHr20&callback=initMap">
       </script>
 
 </head>
 <body style="background-image: url('/static/back_HP.png'); background-color: #FCF3EE;">
-    
+    <div id="fullscreen_image_container" onclick="hide()" style="cursor: pointer; position: absolute; width: 100%; height: 100%; background-color:rgba(0, 0, 0, 0.5); z-index: 1000; display: none; justify-content: center; align-items: center;">
+      <img id="fullscreen_image" src="{% static "/image_render_1.jpg" %}"/>
+    </div>  
+
     <!-- <div style="width: 100%; height: 100%; background-position:center; background-repeat:reap; position: absolute; background-image: url('/static/back_HP.png'); z-index: -1;">
     </div>
     <div style="width: 100%; height: 100%; background-position:center; background-repeat:no-repeat; position: absolute; background-color: #FCF3EE; z-index: -1; opacity: 0.5;">
@@ -247,7 +315,7 @@ a {
                     </li>
                         
                         <div style="background-color: white; z-index: 100; display: flex; width: 240px; height: 220px; justify-content: center; align-items: center;">
-                          {% load static %}
+
                           <img class="sex" style="width: 100px; height: 100px;" src="{% static "/logo_caferino.svg" %}" alt="My image">
                         </div>
                     <li class="nav-item navbar-collapse">
@@ -416,32 +484,32 @@ a {
     </div>
 
     <div class='row' style="display: flex; justify-content: center; background-color: white; padding: 20px;">
-      <div class='col-xs-6' style="margin-right: 12px;">
+      <div onclick="showImage1()" class='col-xs-6' style="margin-right: 12px; cursor: pointer;">
         <img src="{% static "/image_render_1.jpg" %}" alt="My image"></img>
       </div>
       <div class='col-xs-6'>
           <div class='row2'>
-              <div class='col-xs-6' style="margin: 0px 12px 12px 12px">
+              <div onclick="showImage2()" class='col-xs-6' style="margin: 0px 12px 12px 12px; cursor: pointer;">
                 <img src="{% static "/image_render_2.jpg" %}" alt="My image"></img>
               </div>
-              <div class='col-xs-6' style="margin: 0px 12px 12px 12px">
+              <div onclick="showImage3()" class='col-xs-6' style="margin: 0px 12px 12px 12px; cursor: pointer;">
                 <img src="{% static "/image_render_3.jpg" %}" alt="My image"></img>
               </div>
 
           </div>
           <div class='row2'>
-              <div class='col-xs-6' style="margin: 0px 12px 12px 12px">
+              <div onclick="showImage5()" class='col-xs-6' style="margin: 0px 12px 12px 12px; cursor: pointer;">
                 <img src="{% static "/image_render_5.jpg" %}" alt="My image"></img>
               </div>
-              <div class='col-xs-6' style="margin: 0px 12px 12px 12px">
+              <div onclick="showImage6()" class='col-xs-6' style="margin: 0px 12px 12px 12px; cursor: pointer;">
                 <img src="{% static "/image_render_6.jpg" %}" alt="My image"></img>
               </div>
           </div>
           <div class="row2">
-            <div class='col-xs-6' style="margin: 0px 12px 12px 12px">
+            <div onclick="showImage4()" class='col-xs-6' style="margin: 0px 12px 12px 12px; cursor: pointer;">
               <img src="{% static "/image_render_4.jpg" %}" alt="My image"></img>
             </div>
-            <div class='col-xs-6' style="margin: 0px 12px 12px 12px">
+            <div onclick="showImage7()" class='col-xs-6' style="margin: 0px 12px 12px 12px; cursor: pointer;">
               <img src="{% static "/image_render_7.jpg" %}" alt="My image"></img>
             </div>
           </div>
