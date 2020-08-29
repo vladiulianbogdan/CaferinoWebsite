@@ -115,7 +115,23 @@
             </div>
         </nav>
 
-        {% if athlete_list|length > 0 %}
+        {% if blog_posts|length > 0 %}
+            <div style="display: flex; margin-top: 150px; width: 70%; margin-left: auto; margin-right: auto;">
+                <img style="height: 300px;" src="/{{ blog_posts.0.image }}">
+                <div style="margin-left: 30px; display: flex; flex-direction: column;">
+                    <div style="font-family: Montserrat; font-size: 16px; font-weight: bold;"> {{ blog_posts.0.created_at }} </div>
+                    <p style="font-family: Montserrat; font-size: 30px; font-weight: lighter;">{{ blog_posts.0.title }}</p>
+                    <div style="font-family: Roboto; font-size: 14px;">
+                        {% if blog_posts.0.content|length > 500 %}
+                            {{ blog_posts.0.content|slice:"0:500" }}...
+                        {% else %}
+                            {{ blog_posts.0.content }}
+                        {% endif %}
+                    </div>
+                    <div class="readmore"><a href="{{blog_posts.0.id}}">citeste tot</a></div>
+                </div>
+            </div>
+
             <div style="display: flex; flex-direction: column; justify-content: center; margin-top: 20px;">
                 {% for item in blog_posts|slice:"1:" %}
                     {% if forloop.counter0|divisibleby:3 %}
@@ -123,7 +139,7 @@
                     {% endif %}
                 
                     <div class="row_element">
-                        <img class="image_element" src="{% static "/antreprenorilor.jpg" %}" alt="First slide">
+                        <img class="image_element" src="{{ item.image }}" alt="First slide">
                         <p class="date">{{ item.created_at }}</p>
                         <div class="title"> {{ item.title }}</div>
                         <div class="content">{{ item.content }}</div>
@@ -137,8 +153,8 @@
                 {% endfor %}
             </div>
         {% else %}
-            <div style="text-align: center; height: 700px; margin-top: 100px;">
-                Vom reveni in curand cu mai multe postari!
+            <div style="text-align: center; height: auto; margin-top: 50px; margin-bottom: 50px;">
+                Vom reveni in curand cu mai multe postari.
             </div>
         {% endif %}
 
