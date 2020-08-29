@@ -139,10 +139,16 @@
                     {% endif %}
                 
                     <div class="row_element">
-                        <img class="image_element" src="{{ item.image }}" alt="First slide">
+                        <img class="image_element" src="/{{ item.image }}" alt="First slide">
                         <p class="date">{{ item.created_at }}</p>
                         <div class="title"> {{ item.title }}</div>
-                        <div class="content">{{ item.content }}</div>
+                        <div class="content">
+                            {% if item.content|length > 250 %}
+                                {{ item.content|slice:"0:250" }}...
+                            {% else %}
+                                {{ item.content }}
+                            {% endif %}
+                        </div>
                         <div class="readmore" style="margin-left: auto; margin-right: auto;"><a href="{{ item.id }}">citeste tot</a></div>
                     </div>
 
