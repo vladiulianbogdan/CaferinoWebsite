@@ -8,6 +8,8 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100" rel="stylesheet" type="text/css">
+
     <style>
                 .navbar {
                 height: 100px;
@@ -94,7 +96,7 @@
                 <div class="collapse navbar-collapse text-center" id="navbarsExample11">
                     <ul class="navbar-nav">
                         <li class="nav-item active navbar-collapse">
-                            <a class="nav-link" href="/">Home</a>
+                            <a class="nav-link" style="color: #CA351E; font-weight: bolder;" href="/">Home</a>
                         </li>
                         <li class="nav-item navbar-collapse">
                             <a class="nav-link" href="/ateliere/">Ateliere</a>
@@ -108,7 +110,7 @@
                               <img class="sex" style="width: 100px; height: 100px;" src="{% static "/logo_caferino.svg" %}" alt="My image">
                             </div>
                         <li class="nav-item navbar-collapse">
-                            <a class="nav-link" href="#">Calendar</a>
+                            <a class="nav-link" href="/calendar/">Calendar</a>
                         </li>
                         <li class="nav-item navbar-collapse">
                             <a class="nav-link" href="#">Club</a>
@@ -121,8 +123,9 @@
             </div>
         </nav>
 
-        <div>
-            <img class="d-block w-100" src="{% static "/proiecte_sociale_cafea.png" %}" alt="First slide">
+        <div style="position: relative;">
+            <img class="d-block w-100" src="{% static "/proiecte_sociale_cafea.jpg" %}" alt="First slide">
+            <div style="position: absolute; bottom: 15%; left: 10%; font-family: Montserrat; font-size: 50px; font-weight: 100; color:white">PROIECTE SOCIALE</div>
         </div>
 
         <div style="width: 80%; margin-left: auto; margin-right: auto;  margin-top: 50px;">

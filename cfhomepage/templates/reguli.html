@@ -2,6 +2,7 @@
     <head>
                 <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100" rel="stylesheet" type="text/css">
 
     <!--  JS, Popper.js, and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -85,6 +86,15 @@
                 
                 .rule {
                     padding: 20px;
+                    width: 50%;
+                }
+
+                .image_container {
+                    width: 50%;
+                }
+
+                .image_rule {
+                    width: 100%;
                 }
      </style>
 
@@ -98,7 +108,7 @@
                 <div class="collapse navbar-collapse text-center" id="navbarsExample11">
                     <ul class="navbar-nav">
                         <li class="nav-item active navbar-collapse">
-                            <a class="nav-link" href="/">Home</a>
+                            <a class="nav-link" style="color: #CA351E; font-weight: bolder;" href="/">Home</a>
                         </li>
                         <li class="nav-item navbar-collapse">
                             <a class="nav-link" href="/ateliere/">Ateliere</a>
@@ -125,23 +135,24 @@
             </div>
         </nav>
 
-        <div>
-            <img class="d-block w-100" src="{% static "/reguli_header.jpg" %}" alt="First slide">
+        <div style="position: relative;">
+            <img class="d-block w-100" src="{% static "/reguli_banner.jpg" %}" alt="First slide">
+            <div style="position: absolute; bottom: 15%; left: 22%; font-family: Montserrat; font-size: 50px; font-weight: 100;">REGULILE CASEI</div>
         </div>
 
-        <div style="width: 80%; margin-left: auto; margin-right: auto; margin-top: 20px;">
+        <div style="width: 60%; margin-left: auto; margin-right: auto; margin-top: 20px;">
             <div style="display: flex;">
                 <div class="rule" style="display: flex; justify-content: center; align-items: center;">
                     1. Pentru ca manutele copilasilor stau mai mult pe jos, in zona cafenelei destinata parintilor cu copii accesul adultilor se face cu cipici de protectie pusi la dispozitie la intrare. Copiii vor intra descaltati (ideal cu sosete antiderapante). Ne dorim un spatiu cat mai curat si sigur pentru cei mici.
                 </div>
-                <div>
-                    <img style="height: 400px;" src="{% static "/prietenie.jpg" %}" alt="First slide">
+                <div class="image_container">
+                    <img class="image_rule" src="{% static "/1.jpg" %}" alt="First slide">
                 </div>
             </div>
 
             <div style="display: flex;">
-                <div>
-                    <img style="height: 400px;" src="{% static "/prietenie.jpg" %}" alt="First slide">
+                <div class="image_container">
+                    <img class="image_rule" src="{% static "/2.jpg" %}" alt="First slide">
                 </div>
                 <div class="rule" style="display: flex; justify-content: center; align-items: center;">
                     2. Accesul cu caruciorul este posibil doar daca bebe doarme. Dorim sa limita accesul lor in interior pentru a pastra spatiu curat (copiii pun foarte mult manutele pe jos). Punem la dispozitie saltelute, balansoare, scaunele pentru cei mici.
@@ -152,14 +163,14 @@
                 <div class="rule" style="display: flex; justify-content: center; align-items: center;">
                     3. Schimbarea scutecului se face doar in spatiile special amenajate. Scutecele se vor arunca doar in cosurie destinate lor.
                 </div>
-                <div>
-                    <img style="height: 400px;" src="{% static "/prietenie.jpg" %}" alt="First slide">
+                <div class="image_container">
+                    <img class="image_rule" src="{% static "/3.jpg" %}" alt="First slide">
                 </div>
             </div>
 
             <div style="display: flex;">
-                <div>
-                    <img style="height: 400px;" src="{% static "/prietenie.jpg" %}" alt="First slide">
+                <div class="image_container">
+                    <img class="image_rule" src="{% static "/4.jpg" %}" alt="First slide">
                 </div>
                 <div class="rule" style="display: flex; justify-content: center; align-items: center;">
                     4. Daca ai simptome de boala, te rugam sa amani vizita. Te asteptam la noi sanatos sa te poti bucura la maximum de timpul petrecut la noi.
@@ -170,14 +181,14 @@
                 <div class="rule" style="display: flex; justify-content: center; align-items: center;">
                     5. Te rugam sa inchizi portile de siguranta! Scarile pot un pericol pentru copilasi. Atrage atentia si copiilor mari asupra acestui aspect.
                 </div>
-                <div>
-                    <img style="height: 400px;" src="{% static "/prietenie.jpg" %}" alt="First slide">
+                <div class="image_container">
+                    <img class="image_rule" src="{% static "/5.jpg" %}" alt="First slide">
                 </div>
             </div>
 
             <div style="display: flex;">
-                <div>
-                    <img style="height: 400px;" src="{% static "/prietenie.jpg" %}" alt="First slide">
+                <div class="image_container">
+                    <img class="image_rule" src="{% static "/6.jpg" %}" alt="First slide">
                 </div>
                 <div class="rule" style="display: flex; justify-content: center; align-items: center;">
                     6. Ne jucam responsabil si incurajam colaborarea! Copilasilor le e greu sa imparta, asa ca va rugam sa le facilitati o interactiune cat mai placuta prin pomovarea jocului de echipa, schimbului de jucarii, timpilor de asteptare pana cand jucaria devine disponibila etc.
@@ -188,14 +199,14 @@
                 <div class="rule" style="display: flex; justify-content: center; align-items: center;">
                     7. Descurajam comportamentul agresiv. Toti avem zile mai grele si le intelegem, insa va rugam sa pastrati o atmosfera pozitiva. Copiii pot sta la locul de joaca atata timp cat acestia nu deranjeaza alti copii.
                 </div>
-                <div>
-                    <img style="height: 400px;" src="{% static "/prietenie.jpg" %}" alt="First slide">
+                <div class="image_container">
+                    <img class="image_rule" src="{% static "/7.jpg" %}" alt="First slide">
                 </div>
             </div>
 
             <div style="display: flex;">
-                <div>
-                    <img style="height: 400px;" src="{% static "/prietenie.jpg" %}" alt="First slide">
+                <div class="image_container">
+                    <img class="image_rule" src="{% static "/8.jpg" %}" alt="First slide">
                 </div>
                 <div class="rule" style="display: flex; justify-content: center; align-items: center;">
                     8. Spatiu a fost creat cu multa dragoste si atentie si este pus la dispozitia ta pentru a te simti bine. Te rugam sa ai grija de el si sa folosesti totul responsabil. Orice stricaciune considerabila poate atrage limitarea accesului si chiar imputarea costului.
@@ -206,14 +217,14 @@
                 <div style="display: flex; justify-content: center; align-items: center;">
                     9. Te rugam sa ne sesisezi orice incident sau "accident" al micutului tau (sau a altui copil daca este cazul). Intelegem sa se poate intampla. Dorim un loc sigur si curat, deci vom actiona in consecinta!
                 </div>
-                <div>
-                    <img style="height: 400px;" src="{% static "/prietenie.jpg" %}" alt="First slide">
+                <div class="image_container">
+                    <img class="image_rule" src="{% static "/9.jpg" %}" alt="First slide">
                 </div>
             </div>
 
             <div style="display: flex;">
-                <div>
-                    <img style="height: 400px;" src="{% static "/prietenie.jpg" %}" alt="First slide">
+                <div class="image_container">
+                    <img class="image_rule" src="{% static "/10.jpg" %}" alt="First slide">
                 </div>
                 <div class="rule" style="display: flex; justify-content: center; align-items: center;">
                     10. Respectam timpul de invatare si dezvoltare. Nu deranjati cursurile si atelierele in desfasurare!
@@ -224,14 +235,14 @@
                 <div class="rule" style="display: flex; justify-content: center; align-items: center;">
                     11. Iubim animalele de companie! Acestea sunt binevenite in curte si in cafeneaua parintilor doar cu lesa si langa stapan pentru a nu afecta bunastarea celorlalti vizitatori. Pentru a pastra spatiul curat pentru copii, animalele nu au acces in zona de cafenea parinte-copil sau la locul de joaca din interior. Daca un copil este speriat de prezenta animalului de companie, va rugam sa tineti prezenta lui cat mai discreta.
                 </div>
-                <div>
-                    <img style="height: 400px;" src="{% static "/prietenie.jpg" %}" alt="First slide">
+                <div class="image_container">
+                    <img class="image_rule" src="{% static "/11.jpg" %}" alt="First slide">
                 </div>
             </div>
 
             <div style="display: flex;">
-                <div>
-                    <img style="height: 400px;" src="{% static "/prietenie.jpg" %}" alt="First slide">
+                <div class="image_container">
+                    <img class="image_rule" src="{% static "/12.jpg" %}" alt="First slide">
                 </div>
                 <div class="rule" style="display: flex; justify-content: center; align-items: center;">
                     12. Apreciem si incurajam feedbackul tau! Daca sesizezi o neregula sau ceva nu a fost pe placut tau te rog sa ne comunici imediat. Vom face tot posibilul ca timpul petrecut la noi sa fie cat mai placut.
