@@ -140,7 +140,7 @@
                 
                     <div class="row_element">
                         <img class="image_element" src="/{{ item.image }}" alt="First slide">
-                        <p class="date">{{ item.created_at }}</p>
+                        <p class="date">{{ item.created_at|date:"d.m.Y" }}</p>
                         <div class="title"> {{ item.title }}</div>
                         <div class="content">
                             {% if item.content|length > 250 %}
