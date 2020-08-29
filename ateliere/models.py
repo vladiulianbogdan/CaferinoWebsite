@@ -32,7 +32,7 @@ class Event(models.Model):
         string = "<ul>"
 
         for participation in participations:
-            string += "<li><a href='http://127.0.0.1:8000/admin/ateliere/participation/" + str(participation.id) +  "/change/'> " + participation.name + " " + participation.email + "</a></li>"
+            string += "<li><a href='/admin/ateliere/participation/" + str(participation.id) +  "/change/'> " + participation.name + ", " + participation.email + ", " + participation.phone + "</a></li>"
 
         string += "</ul>"
 
