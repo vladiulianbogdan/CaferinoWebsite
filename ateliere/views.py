@@ -3,6 +3,7 @@ from django.shortcuts import render
 
 from .models import Event
 from .models import Participation
+from django.core.mail import EmailMessage
 
 def index(request):
     events = Event.objects.all()
@@ -26,4 +27,10 @@ def register(request, id):
         b = Participation(event_id=event, name=request.POST.get("nume", "")  + " " + request.POST.get("prenume", ""), email=request.POST.get("email", ""), phone=request.POST.get("telefon", ""))
         b.save()
 
-        return render(request, 'register.html', {})
+        email = EmailMessage('Iti confirmam inscrierea la evenimentul ' + event.title, 'Iti confirmam inscrierea la evenimentul ' + event.title, to=[b.email])
+        email.send()
+
+        email = EmailMessage('Ai un nou participant la cursul ' + event.title, 'Ai un nou participant la cursul ' + event.title, to=["mirela@caferino.ro"])
+        email.send()
+
+        return render(request, 'register_confirmation.html', {})

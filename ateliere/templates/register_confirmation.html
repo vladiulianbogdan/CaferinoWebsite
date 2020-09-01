@@ -100,33 +100,8 @@
         </nav>
 
         
-        <div style="display: flex; justify-content: center; margin-top: 200px; margin-bottom: 300px">
-            <form action="/ateliere/register/{{event.id}}/" method="post" onsubmit="return validateForm();" name="form">
-                {% csrf_token %}
-                <p style="text-align: center;">Inregistreaza-te pentru evenimentul {{ event.title }}</p>
-                <table>
-                    <tr>
-                    <td align="right">Nume </td>
-                    <td><input style="margin: 5px;" type="text" name="nume" size="20" oninvalid="setCustomValidity('Introduceti numele!')" /></td>
-                    </tr>
-                    <tr>
-                    <td align="right">Prenume </td>
-                    <td><input style="margin: 5px;" type="text" name="prenume" size="20" oninvalid="setCustomValidity('Introduceti prenumele!')" > </input</td>
-                    </tr>
-                    <tr>
-                        <td align="right">Email </td>
-                        <td><input style="margin: 5px;" name="email" size="20" type="email"/> </input></td>
-                    </tr>
-                    <tr>
-                        <td align="right">Numar de telefon </td>
-                        <td><input style="margin: 5px;" type="text" name="telefon" size="20"> </input></td>
-                    </tr>
-                    <tr>
-                    <td></td>
-                    <td><input type="submit" value="Inregistreaza-te" /></td>
-                    </tr>
-                </table>
-            </form>
+        <div style="display: flex; justify-content: center; margin-top: 200px; margin-bottom: 60%; text-align: center;">
+            Inregistrare confirmata! Vei primi un email cu confirmarea inregistrarii (verifica si in spam).
         </div>
 
         <div style="display: flex; align-items: center; padding: 50px; background-color: #FCF3EE; box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.5);">

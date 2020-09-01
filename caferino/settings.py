@@ -130,3 +130,9 @@ STATICFILES_DIRS = (
 )
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'mail.caferino.ro'
+EMAIL_HOST_USER = 'mirela@caferino.ro'
+EMAIL_HOST_PASSWORD = 't3odXs-mNzYg'
+EMAIL_PORT = 587
