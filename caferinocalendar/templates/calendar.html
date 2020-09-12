@@ -14,7 +14,7 @@
                 height: 100px;
                 }
 
-                .sex {
+                .image_logo_caferino {
                 transform: translateY(calc(50% - 20px));
                 z-index: 10;
                 }
@@ -51,13 +51,13 @@
                             
                             <div style="background-color: white; z-index: 100; display: flex; width: 240px; height: 220px; justify-content: center; align-items: center; box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.05);">
                               {% load static %}
-                              <img class="sex" style="width: 100px; height: 100px;" src="{% static "/logo_caferino.svg" %}" alt="My image">
+                              <img class="image_logo_caferino" style="width: 100px; height: 100px;" src="{% static "/logo_caferino.svg" %}" alt="My image">
                             </div>
                         <li class="nav-item navbar-collapse">
-                            <a class="nav-link" style="color: #CA351E; font-weight: bolder;" href="/calendar/">Calendar</a>
+                            <a class="nav-link" style="color: #CA351E;" href="/calendar/">Calendar</a>
                         </li>
                         <li class="nav-item navbar-collapse">
-                            <a class="nav-link" href="#">Club</a>
+                            <a class="nav-link" href="/contact">Club</a>
                         </li>
                         <li class="nav-item navbar-collapse">
                             <a class="nav-link" href="#">Shop</a>
