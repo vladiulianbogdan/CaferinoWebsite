@@ -1,0 +1,308 @@
+<html>
+    <head>
+                <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!--  JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100" rel="stylesheet" type="text/css">
+
+    <style>
+                .navbar {
+                height: 100px;
+                }
+
+                .sex {
+                transform: translateY(calc(50% - 20px));
+                z-index: 10;
+                }
+
+                .navbar-nav > li{
+                padding-left:30px;
+                padding-right:30px;
+                }
+
+                .row {
+                    display: flex;
+                    justify-content: center;
+                }
+
+                .image_element {
+                    width: 300px;
+                }
+
+                .row_element {
+                    width: 300px;
+                    margin: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+
+                .date {
+                    text-align: center;
+                    font-family: Montserrat; 
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+
+                .title {
+                    font-family: Montserrat; 
+                    font-size: 40px; 
+                    font-weight: lighter;
+                    margin-top: 15px;
+                    margin-bottom: 30px;
+                }
+
+                .subtitle {
+                    font-family: Roboto;
+                    font-size: 18px;
+                    font-weight: bold;
+                    margin-top: 30px;
+                }
+
+                .content {
+                    font-family: Roboto;
+                    font-size: 18px;
+                }
+
+                .readmore {
+                    background-color: #F13C37;
+                    width: 50%;
+                    text-align: center;
+                    color: white;
+                    margin-top: 20px;
+                    font-family: Montserrat;
+                    font-size: 16px;
+                    margin-top: auto;
+                }
+
+                a {
+                    color:inherit;
+                    text-decoration: none;
+                }
+                
+                .rule {
+                    text-align: center;
+                    margin-top: 20px;
+                }
+     </style>
+
+    </head>
+    <body style="background-image: url('/static/back_HP.png'); background-color: #FCF3EE;">
+        <nav class="navbar navbar-expand-sm navbar-light" style="box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.05);">
+            <div class="mx-auto d-sm-flex d-block flex-sm-nowrap">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse text-center" id="navbarsExample11">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active navbar-collapse">
+                            <a class="nav-link" style="color: #CA351E; font-weight: bolder;" href="/">Home</a>
+                        </li>
+                        <li class="nav-item navbar-collapse">
+                            <a class="nav-link" href="/ateliere/">Ateliere</a>
+                        </li>
+                        <li class="nav-item navbar-collapse">
+                            <a class="nav-link" href="/blog/">Blog</a>
+                        </li>
+                            
+                            <div style="background-color: white; z-index: 100; display: flex; width: 240px; height: 220px; justify-content: center; align-items: center; box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.05);">
+                              {% load static %}
+                              <img class="sex" style="width: 100px; height: 100px;" src="{% static "/logo_caferino.svg" %}" alt="My image">
+                            </div>
+                        <li class="nav-item navbar-collapse">
+                            <a class="nav-link" href="/calendar/">Calendar</a>
+                        </li>
+                        <li class="nav-item navbar-collapse">
+                            <a class="nav-link" href="#">Club</a>
+                        </li>
+                        <li class="nav-item navbar-collapse">
+                            <a class="nav-link" href="#">Shop</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div style="padding: 100px; margin-top: 50px;">
+        <h1>
+        Politica de confidențialitate Caferino
+    </h1>
+<p>
+Bun venit pe pagina noastră de Politică de Confidențialitate! Ne bucurăm că ați decis să aflați informații precise și relevante pentru dvs. privind datele cu caracter personal și utilizarea acestora. Este important de menționat că prin vizitarea website-ului nostru sunteți de acord cu prezenta Politică. În caz contrar, vă rugăm să nu navigați pe www.caferino.ro sau pe conturile media asociate Caferino. Vă atragem atenția și asupra Termenilor de utilizare ai website-ului nostru unde veți găsi de asemenea informații utile. 
+Obiectivul acestui document este de a răspunde la cateva întrebări simple privind informațiile despre dvs. În rândurile de mai jos veți afla cine suntem, ce date prelucrăm, în ce scopuri, care sunt drepturile dvs și cum vi le puteți exercita. 
+În cadrul Politicii de confidențialitate folosim câtiva termeni specifici ariei de securitate a prelucrării datelor cu caracter personal, însă vom defini mai jos cei mai utilizați termeni, pentru a facilita înțelegerea textului. 
+</p>
+
+<p>
+„GDPR”  este un acronim care face referire la REGULAMENTUL (UE) 2016/679 AL PARLAMENTULUI EUROPEAN ȘI AL CONSILIULUI din 27 aprilie 2016 privind protecția persoanelor fizice în ceea ce privește prelucrarea datelor cu caracter personal și privind libera circulație a acestor date și de abrogare a Directivei 95/46/CE (Regulamentul general privind protecția datelor);
+</p>
+
+<p>
+„Persoană vizată” reprezintă utilizatorii site-ului www.caferino.ro sau a conturilor media asociate Caferino și sunt persoane fizice care pot fi identificate și ale cărei date sunt prelucrate de către Caferino în calitate de operator.
+</p>
+
+<p>
+„date cu caracter personal” înseamnă orice informații privind o persoană fizică identificată sau identificabilă („persoana vizată”); o persoană fizică identificabilă este o persoană care poate fi identificată, direct sau indirect, în special prin referire la un element de identificare, cum ar fi un nume, un număr de identificare, date de localizare, un identificator online, sau la unul sau mai multe elemente specifice, proprii identității sale fizice, fiziologice, genetice, psihice, economice, culturale sau sociale;  
+„operator” înseamnă persoana fizică sau juridică, autoritatea publică, agenția sau alt organism care, singur sau împreună cu altele, stabilește scopurile și mijloacele de prelucrare a datelor cu caracter personal; atunci când scopurile și mijloacele prelucrării sunt stabilite prin dreptul Uniunii sau dreptul intern, operatorul sau criteriile specifice pentru desemnarea acestuia pot fi prevăzute în dreptul Uniunii sau în dreptul intern;  
+
+„prelucrare” înseamnă orice operațiune sau set de operațiuni efectuate asupra datelor cu caracter personal sau asupra seturilor de date cu caracter personal, cu sau fără utilizarea de mijloace automatizate, cum ar fi colectarea, înregistrarea, organizarea, structurarea, stocarea, adaptarea sau modificarea, extragerea, consultarea, utilizarea, divulgarea prin transmitere, diseminarea sau punerea la dispoziție în orice alt mod, alinierea sau combinarea, restricționarea, ștergerea sau distrugerea;  
+
+„consimțământ” al persoanei vizate înseamnă orice manifestare de voință liberă, specifică, informată și lipsită de ambiguitate a persoanei vizate prin care aceasta acceptă, printr-o declarație sau printr-o acțiune fără echivoc, ca datele cu caracter personal care o privesc să fie prelucrate;  
+
+„încălcarea securității datelor cu caracter personal” înseamnă o încălcare a securității care duce, în mod accidental sau ilegal, la distrugerea, pierderea, modificarea, sau divulgarea neautorizată a datelor cu caracter personal transmise, stocate sau prelucrate într-un alt mod, sau la accesul neautorizat la acestea;  
+</p>
+
+<p>
+<b>Cine suntem? </b>
+În calitate de operator de date cu caracter personal, suntem societatea SC LONGIMANUS SERVICES SRL, cu denumirea comercială CAFERINO, cu sediul în str. Soltuzului, numărul12, reprezentați legal prin Mirela Codreanu. În mediul online suntem prezenți la adresa www.caferino.ro și în rețetele sociale pe Facebook și Instagram.  
+</p>
+
+<p>
+<b>Ce date colectăm?</b>
+<ul>
+    <li>
+        Adrese de e-mail
+Pentru facilitatea transmiterii de newsletter și informări conexe de marketing colectăm și stocăm adresele de e-mail obținute în mod direct de la persoanele vizate pe baza consimțământului acordat, în deplină conformitate cu Regulamentul UE 679/2016.
+Adresele de email sunt stocate în platforma de marketing GetResponse ca urmare a convenției încheiate între cei doi operatori și cu garanțiile de rigoare. Dacă aveți întrebări privind utilizarea datelor dvs. de către GetResponse, vă recomandăm să citiți Politica de Confidențialitate a platformei, accesibilă aici https://www.getresponse.com/legal/privacy
+	De asemenea, adresele de e-mail vor fi colectate la înscrierea pe website-ul Caferino.ro la evenimentele propuse de operator (evenimente private, cursuri, seminarii, petreceri, etc). Aceste informații vor fi utilizate în scopul menținerii comunicării cu persoanele care se înscriu la evenimente, cursuri, etc
+    </li>
+    <li>
+        Numere de telefon, nume și prenume
+        Numerele de telefon și nume și prenume vor fi colectate la înscrierea pe website-ul Caferino.ro la evenimentele propuse de operator (evenimente private, cursuri, seminarii, petreceri, etc). Aceste informații vor fi utilizate în scopul menținerii comunicării cu persoanele care se înscriu la evenimente, cursuri, etc, în baza executării contractului dintre client (participant la curs) și prestatorul de servicii (Caferino), unde ”contractul” este angajamentul luat de ambele părți de a-și onora partea (clientul achită contravaloarea cursurilor, prestatorul desfășoară serviciile antamate). Furnizarea acestor servicii (în scopul cărora se prelucrează datele cu caracter personal) fiind și un interes legitim al operatorului.
+    </li>
+    <li>
+        Adrese IP
+        Prin utilizarea website-ului nostru colectăm adresa IP a unității dvs. precum și informații despre tipul de dispozitiv de pe care ne accesați.
+    </li>
+    <li>
+        Imagini Video
+        Pe toată suprafața Caferino, excepțiile fiind zonele sensibile (grupurile sanitare) se află amplasate camera de supraveghere video în circuit închis (CCTV). Scopul specific al prelucrării este asigurarea securității perimetrului și protejarea proprietății private, paza bunurilor, valorilor și protecția persoanelor în conformitate cu Legea 333/ 2003 privind paza obiectivelor, bunurilor, valorilor și protecția persoanelor, republicată în 2014 și soluționarea eventualelor reclamații și neconformități formulate de terți, ca interes legitim. Depune eforturi contacte pentru a menține securitatea prelucrării datelor cu caracter personal captate de către camerele noastre de supraveghere. Puteti să solicitați mai multe informații la contact.caferino@gmail.com
+    </li>
+    <li>
+        Imagini foto
+        Caferino este o afacere care se autosusține din produsele și serviciile pe care le oferă clienților iar prezența în online este necesară pentru susținerea activității, respectiv aducerea la cunoștință a publicului a acestor produse și servicii. Astfel, în baza interesului legitim de a ne susține activitatea prin promovarea produselor și serviciilor noastre, ocazional, publicăm pe site-ul nostru și pe conturile de social media imagini din locația noastră atât în cadrul evenimentelor organizate cât și în afara acestora în care pot fi surprinse și uneori identificate persoane. În cazul imaginilor din cadrul evenimentelor organizate, surprinderea imaginilor este de asemenea necesară pentru probarea desfășurării activităților contracost în fața organelor abilitate, ca măsură anti fraudă. Ne luăm angajamentul de a vă informa din nou despre acest fapt înaintea începerii evenimentelor, pentru a vă da opțiunea să refuzați să fiți surprinși în poze. Pentru a vă exprima dorința de a nu fi surprinși în imaginile din cadrul evenimentelor este suficient să semnalați organizatorul sau reprezentantul acestuia la momentul începerii evenimentelor, caz în care Caferino va depune eforturi proporționale pentru a evita identificarea persoanei respective în imagini. Dacă identificați imagini cu dvs. pe site-ul nostru sau pe rețelele de social media pe care nu doriți să le folosim vă rugăm să ne scrieți la contact.caferino@gmail.com. Vă atragem atenția că ne asumăm angajamentul de a gestiona doar imaginile foto produse de către Coferino și nu putem fi răspunzători pentru imaginile postate în social media de către terți, chiar dacă imaginile în cauză sunt surprinse în locația noastră.
+    </li>
+</ul>
+</p>
+
+Depunem toate eforturile pentru a vă oferi cât mai multe informații și revizuim periodic mecanismele tehnice și organizatorile pe care le avem în funcțiune.  Cu toate acestea, categoriile de date enumerate mai sus nu reprezintă o listă exhaustivă a datelor cu caracter personal care sunt procesate de către Caferino.ro fie independent, fie prin asociere cu alți operatori. Deși colectăm în mod direct de la dvs. datele de contact, sunt anumite categorii de informații pe care le putem colecta de la operatorii cu care lucrăm (ca de exemplu, informații privind rata de accesare a link-urilor transmise prin newsletter, informații care sunt măsurate de către Get Response). De asemenea, este posibil să colectăm și informații privind modul în care interacționați cu webite-ul nostru sau ce tip de dispozitiv utilizați pentru a accesa pagina web (desktop, mobil, tabletă).
+
+<p>
+<b>În ce scopuri colectăm date cu caracter personal? </b>
+În momentul în care colectăm date de la dvs vă comunicăm și scopul colectării. Cel mai adesea dorim să îmbunătățim experiența dumneavoastră în relația cu noi prin o comunicare eficientă, informarea periodică privind produse noi, potențiale oportunități sau alte informații relevante. Mai sunt însă și alte scopuri pe care nu le-am declarat la colectare și vă asigurăm că sunt comparabile, compatibile cu cele inițiale și în conformitate cu legislația în vigoare. Facem periodic analiza întregului sistem de colectare a datelor pentru a ne asigura că luăm măsurile adecvate și proporționale și avem informații corecte și complete. Privind scopurile nedeclarate la colectare, acestea se referă la aspecte precum (și nu numai): apărarea împotriva atacurilor cibernetice, conformarea cu legislația în vigoare (spre exemplu Codul Fiscal ne obligă să păstrăm documente contabile pe o perioadă de până la 10 ani), situația puțin probabilă a unui litigiu, în scopul onorării unor cererilor emise de autorități, verificarea neconcordanțelor (ex. cazuri de furt etc). Această listă nu este exhaustivă, este posibil ca din desfășurarea activității curente să derive alte scopuri nedeclarate în prezenta Politică. Întotdeauna vom fi corecți și vom procesa strict informațiile necesare și doar pentru scopurile de care beneficiem împreună. Ne luăm angajamentul ca niciodată să nu vindem informațiile pe care le avem despre dvs, să nu împărțim cu terți neautorizați informațiile dvs, să nu le tratăm abuziv și să nu le utilizăm în scopuri ilicite.        
+</p>
+
+<p>
+Conținut inserat în website
+Pe paginile noastre veți găsi conținut inserat de la alți operatori de date cu caracter personal (Facebook, Instagram). Conținutul inserat funcționează precum accesarea directă a acestor surse, drept urmare aceste destinații (conținut inserat) pot colecta date despre dvs și comportamentul dvs online, poate utiliza fișiere cookie, pot asocia interacțiunea dvs cu acel conținut (de exemplu, dacă utilizați butonul de Like asociat rețelei Facebook de pe interfata www.caferino.ro, aprecierea dvs. este colectată de către rețeaua de socializare și se supune condițiilor de utilizare ale platformei sociale). 
+
+
+Cu cine împărțim datele dvs?
+Putem să furnizăm datele dvs. cu caracter personal partenerilor noștri care au calitatea de operatori sau altor terți autorizați. Noi depunem eforturi constante pentru a ne asigura că avem implementate măsuri tehnice și organizatorice adecvate pentru a păstra informațiile dvs. în siguranță și solicităm același lucru de la partenerii cu care optăm să ne asociem. În acest sens, avem încredere că transferurile de date sunt realizate în condiții de siguranță iar datele dvs. sunt prelucrate exclusiv în scopurile agreate de noi.
+De asemenea, putem să transmitem datele dvs. și altor părți la solicitarea dvs. expresă ca urmare a exercitării a dreptului la portabilitate.
+
+
+Platforma de email marketing Get Response
+Comunicările de tip marketing către utilizatori se realizează prin platforma de email marketing GetResponse, puteți să consultați Politica de Confidențialitate aici (https://www.getresponse.com/legal/privacy). În vederea desfășurării prezentului parteneriat, operatorul de date Caferino a evaluat GetResponse din perspectiva adoptării măsurilor tehnice și organizatorice adecvate și proporționale privind securitatea datelor cu caracter personal utilizate. Platforma oferă servicii de email marketing complete și utilizează unelte pentru îmbunătățirea acestora, drept urmare platforma poate utiliza fișiere cookie proprii, poate utiliza motoare de analiză comportamentală, algoritmi, poate înregistra tipul unității de pe care se accesează e-mail-urile, procese automatizate pentru a genera statistici și informații suplimentare privind campaniile de email marketing în scopul de a genera conținut relevant pentru utilizatori. 
+
+Facebook
+Website-ul nostru deține conținut integrat din platforma socială Facebook care funcționează precum accesarea direct. Pentru detalii privind utilizarea Facebook vă rugăm să consultați Termeni Și Condiții aici - https://www.facebook.com/legal/terms/update  și Politica de confidențialitate aici -  https://www.facebook.com/privacy/explanation
+
+Google (platforma servicii)
+Folosim o varietate de servicii oferite de Google, drept urmare o mare parte din datele dvs. este colectată de către Google. Ar trebui să aveți în vedere că Google realizează propria prelucrare de date prin analizarea fluxului de informații pe care dvs. îl generați fie doar prin accesarea site-ului Caferino.ro, chiar înainte de a vă înscrie la newsletter sau la un eveniment organizat de noi. Printre serviciile utilizate de noi sunt Google Maps, Google Analytics, Google Calendar. Google este operator de date cu caracter personal și prelucrează datele dvs cu caracter personal în nume propriu. Google primește date anonimizate prin fișierele cookie pe care le rulează site-urile găzduite de platformă și stochează aceste informații pe serverele sale din SUA. Google declară că respectă convenția UE-SUA denumită ”Privacy Shield”. Pentru mai multe informații vă recomandăm să accesați Politica de confidențialitate a Google de aici - https://policies.google.com/privacy?hl=ro&fg=1
+</p>
+
+
+Diverse autorități
+Datele cu caracter personal pot fi utilizate de căte autorități în situații particulare, cum ar fi cazul anchetelor epidemiologice efectuate de autoritățile competente. În această situație particulară, datele (de contact) pot fi divulgate către autoritățile responsabile de anchete epidemiologice fără alte solicitări suplimentare din partea acestora apreciindu-se că dezvăluirea servește interesului public și prevalează în fața protejării prezentelor drepturi ale persoanei vizate.
+De asemenea, vom divulga datele dvs. către poliție, instanțe judecătorești și alte organe abilitate ale statului, în baza și în limitele prevederilor legale și doar ca urmare a unor cereri din partea acestora.
+
+<p>
+Cât timp vă reținem datele? 
+Stocăm datele dvs. cu caracter personal doar pe perioada necesară îndeplinirii scopurilor, dar nu mai mult de 5 ani de la încetarea contractului sau ultima interacțiune cu noi sau până în momentul în care alegeți să vă dezabonați din lista de newsletter (adrese e-mail). Dezabonarea se poate face accesând butonul ”Dezabonare” din orice mesaj transmis în numele Caferino.ro sau trimițând un e-mail la adresa contact.caferino@gmail.com. Dezabonarea reprezintă suspendarea consimțământului acordat la înregistrarea în lista de distribuție și nu afectează în nici un mod legalitatea prelucrării datelor până la momentul respectiv.
+
+Care sunt drepturile dvs?
+În conformitate cu Regulamentul UE 2016/679 aveți următoarele drepturi:
+
+<ul>
+    <li>
+Dreptul la acces la date
+Peroanele vizate au dreptul de a obține de la Caferino.ro o confirmare că se prelucrează sau nu date cu caracter personal care o privesc și, în cazul afirmativ, acces la datele respective și la următoarele informații: (a) scopurile prelucrării; (b) categoriile de date cu caracter personal vizate; (c) destinatarii sau categoriile de destinatari cărora datele le-au fost sau urmează a fi divulgate; (d) perioada de stocare; (e) existența dreptului de a solicita operatorului rectificarea sau ștergerea datelor cu caracter personal ori restricționarea prelucrării datelor cu caracter personal referitoare la persoana vizată sau dreptul de a se opune prelucrării; (f) dreptul de a depune o plângere în fața unei autorități de supraveghere; Caferino.ro va furniza  o copie a datelor cu caracter personal care fac obiectul prelucrării. Pentru orice alte copii suplimentare solicitate de persoana vizată Caferino.ro va solicita taxa de 10 lei. Înformațiile solicitate vor fi furnizate în format electronic. 
+    </li>
+
+    <li>
+Dreptul la rectificare 
+Persoanele vizate au dreptul de a solicita Caferino.ro rectificarea datelor cu caracter personal care o privesc, precum și dreptul de a obține completarea datelor cu caracter personal incomplete, inclusive prin furnizarea unei declarații suplimentare. 
+</li>
+
+<li>
+Dreptul la ștergere (”dreptul de a fi uitat”)
+Persoanele vizate au dreptul de a obține din partea operatorului ștergerea datelor cu caracter personal care o privesc. Exercitarea acestui drept este echivalent cu suspendarea consimțământului acordat la înscrierea în lista de distribuție. Acest drept va afecta datele care nu sunt protejate de alte legi în vigoare (de exemplu, în cadrul campaniilor de marketing în care sunt oferite premii, operatorul are obligația legală de a documenta acordarea prevederilor în conformitate cu Codul Fiscal în scopul prevenirii comiterii de infracțiuni cu caracter financiar sau de altă natură). În cazul în care arhivarea datelor cu caracter personal este necesară conform legislației în vigoare, aceasta va prima în fața Regulamentului GDPR iar datele vor fi păstrate (arhivate). Această decizie precum și motivația de a nu șterge datele va fi comunicată persoanei vizate. În această situația se va aplica minimizarea datelor (reducerea volumului de informații privind persoana vizată la un minimum necesar pentru a îndeplini cerințele legale). De asemenea, operatorul are dreptul de a refuza exercitarea acestui drept pentru constatarea, exercitarea sau apărarea unui drept în instanță. 
+</li>
+
+<li>
+Dreptul la restricționarea prelucrării
+În cazul în care persoana vizată constată că datele utilizate de către operator sunt utilizate în mai multe scopuri, poate cere restricționarea prelucrării la unul sau mai multe scopuri. 
+</li>
+
+<li>
+Dreptul la portabilitatea datelor
+Persoana vizată are dreptul de a solicita Caferino datele cu caracter personal care o privesc. Caferino va furniza informațiile în mod electronic în format Word sau PDF.
+</li>
+
+</li>
+Dreptul la opoziție
+Persoana vizată are dreptul de a se opune prelucrării datelor cu caracter personal care o privesc. În acest caz, Caferino nu va mai prelucra aceste date cu excepția cazurilor în care demonstrează motive legitime și imperioase care justifică prelucrarea și care prevalează asupra intereselor, drepturilor și libertăților persoanei vizate. De exemplu, desi nu este un scop al operatorului de date, datele cu caracter personal pot fi utilizate în cazul anchetelor epidemiologice efectuate de autoritățile competente. În această situație particulară, datele (de contact) pot fi divulgate către autoritățile responsabile de anchete epidemiologice fără alte solicitări suplimentare din partea acestora apreciindu-se că dezvăluirea servește interesului public și prevalează în fața protejării prezentelor drepturi ale persoanei vizate. 
+</li>
+
+</ul>
+
+Dacă aveți întrebări sau vreți să ne transmiteți o cerere în temeiul drepturilor detaliate mai sus vă rugăm să ne trimiteți un mail la adresa contact.caferino@gmail.com Analizăm individual fiecare cerere, drept urmare ne rezervăm dreptul de a vă răspunde în termen de 30 de zile calendaristice, indiferent de situația în care se regăsește cererea dvs. În cazul în care n putem da curs cererii dvs (datorită unor prevederi legale, de exemplu) vă vom înștiința de asemenea în termen de 30 de zile. În analiza cererii depuse este posibil să vă solicităm anumite date suplimentare care ne ajută să vă identificăm în baza noastră de date. Refuzul dvs. de a ne oferi informațiile prin care să vă identificăm duce la eliberarea Caferino de obligația de a vă procesa cererea de exercitare a drepturilor, datoită imposibilității de a vă identifica.  
+În situația în care descoperim o bresă de securitate vom urmări protocoalele impuse prin Regulamentul UE 2016/679 și vom lua toate măsurile necesare pentru restabilirea situației de dinainte de incident.
+
+Dacă nu sunteți mulțumiți de modul în care a fost gestionată cererea dvs. de exercitare a unui drept, aveți posibilitatea de a vă adresa Autorității de Supraveghere a Prelucrării Datelor cu Caracter Personal (B-dul G-ral. Gheorghe Magheru nr. 28-30, Sector 1, cod poștal 010336, București, România, telefon +40.318.059.211 / +40.318.059.212, anspdcp@dataprotection.ro)
+</p>
+
+Ce măsuri tehnice și organizatorice am luat pentru protejarea datelor dvs. cu caracter personal? 
+Datele dvs cu caracter personal sunt foarte importante pentru noi. Vă mulțumim pentru încrederea oferită prin faptul că ne permiteți să vă utilizăm aceste date. Pentru că înțelegem importanța acestor informații, am desfășurat Analize de Impact privind Prelucrarea Datelor cu Caracter Personal, fapt ce ne-a permis să implementăm măsuri corecte, eficiente și rezonabile de securitatea prelucării datelor cu caracter personal, astfel încât să ținem în condiții de siguranță informațiile dvs. personale.
+Ca urmare a acestei analize, dar și la indicațiile regăsite în regulament prelucrăm datele cu caracter personal cu respectarea următoarelor reguli generale:
+<ul>
+<li>Principiul minimizării datelor. Nu colectăm mai multe date decât strictul necesar pentru desfășurarea scopurilor declarate mai sus, în prezenta Politică.</li>
+<li>Limitarea accesului la date. Ne asigurăm că un număr limitat de angajați au acces la datele cu caracter personal. Aceștia au avut parte de instruiri separate privind regulile impise de GDPR și modul în care pot desfășura activități de prelucrare a datelor cu caracter personal în numele Caferino, însă toți angajații noștri au fost instruiți privind manipularea informațiiilor personale deoarece prețuim încrederea dvs. și dorim să creem un mediu de siguranță.</li>
+<li>Măsuri tehnice adecvate. Utilizăm chei de acces complexe pe care le schimbăm la intervale regulate pentru a evita ”preluarea” de conturi, piratarea sau alte forme de atacuri cibernetice. de asemenea folosim soft-uri dedicate din domeniul securității informatice pentru a preveni atacurile cu software malware și avem soluții de back-up pentru sistemele utilizate (ex. Antivirus) </li>
+<li>Reconfirmarea datelor cu caracter personal. Este posibil ca la anumite intervale de timp considerate adecvate de către Caferino să vă solicităm o actualizare a datelor dvs. de contact. Facem acest lucru ca să ne asigurăm că avem date actualizate și corecte pentru a facilita atât comunicarea cu dvs. cât și pentru a evita aglomerarea bazelor de date cu informații inutile.</li>
+</ul>
+
+Vă mulțumim pentru parcurgerea Politici de Confidențialitate. Dacă aveți întrebări privind informațiile regăsite aici vă rugăm să ne scrieți la contact.caferino@gmail.com
+
+<p>
+<a id="myLink" href="/" onclick="reset();return false;">Pentru a modifica alegerea legata de cookieuri si pentru a sterge cookieurile existente apasati aici!</a>
+</p>
+</div>
+    </body>
+    <script>
+        function deleteCookie(name) {
+            var hostname = document.location.hostname.replace(/^www\./, ''),
+            commonSuffix = '; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/';
+
+            document.cookie = name + '=; domain=.' + hostname + commonSuffix;
+            document.cookie = name + '=' + commonSuffix;
+        }
+
+        function setCookie(name, value) {
+            var date = new Date();
+            date.setTime(date.getTime() + this.cookieTimeout);
+
+            document.cookie = name + '=' + value + ';expires=' + date.toGMTString() + ';path=/';
+        }
+
+        function reset() {
+            ['__utma', '__utmb', '__utmc', '__utmt', '__utmv', '__utmz', '_ga', '_gat', '_gid', 'hasConsent'].map(deleteCookie);
+            alert("Cookieurile au fost sters!");
+        }
+    </script>
+</html>

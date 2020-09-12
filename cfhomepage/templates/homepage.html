@@ -9,6 +9,46 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    
+<script>
+  function isConsent() {
+        return document.cookie.indexOf("hasConsent" + '=' + "true") > -1 || localStorage.getItem("hasConsent") === "true";
+      };
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-170460577-1"></script>
+<script>
+  if (isConsent()) {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-170460577-1');
+  }
+</script>
+
+<!-- Facebook Pixel Code -->
+<script>
+  if (isConsent()) {
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+ fbq('init', '2689946364605416'); 
+fbq('track', 'PageView');
+  }
+</script>
+<noscript>
+ <img height="1" width="1" 
+src="https://www.facebook.com/tr?id=2689946364605416&ev=PageView
+&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->
+
     <style>
 .navbar {
   height: 100px;
@@ -284,7 +324,7 @@ a {
       * The key parameter will contain your own API key (which is not needed for this tutorial)
       * The callback parameter executes the initMap() function
       -->
-      <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkDklZhYaxOSxfhYU3_B8cFndJjxPHr20&callback=initMap">
+      <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVW8fhOMcMfcXaime2Z5PtCn2I7x8XJKQ&callback=initMap">
       </script>
 
 </head>
@@ -322,7 +362,7 @@ a {
                         <a class="nav-link" href="/calendar/">Calendar</a>
                     </li>
                     <li class="nav-item navbar-collapse">
-                        <a class="nav-link" href="#">Club</a>
+                        <a class="nav-link" href="/club">Club</a>
                     </li>
                     <li class="nav-item navbar-collapse">
                         <a class="nav-link" href="#">Shop</a>
@@ -333,22 +373,43 @@ a {
     </nav>
 
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      {% if banners|length > 1 %}
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+
+            {% for item in banners|slice:"1:" %}
+            <li data-target="#carouselExampleIndicators" data-slide-to="{{forloop.counter}}"></li>
+            {% endfor %}
         </ol>
+      {% endif %}
         <div class="carousel-inner">
+
+          {% if banners|length > 0 %}
           <div class="carousel-item active">
-            <img class="d-block w-100" src="{% static "/misiune.png" %}" alt="First slide">
+            <a href="{{banners.0.url}}">
+              <img class="d-block w-100" src="{{ banners.0.image }}" alt="First slide">
+            </a>
           </div>
-          <div class="carousel-item">
+          {% endif %}
+
+          {% if banners|length > 1 %}
+          {% for item in banners|slice:"1:"  %}
+            <div class="carousel-item">
+              <a href="{{item.url}}">
+                <img class="d-block w-100" src="{{ item.image }}" alt="First slide">
+              </a>
+            </div>
+          {% endfor %}
+          {% endif %}
+
+          <!-- <div class="carousel-item">
             <img class="d-block w-100" src="{% static "/hero_viziune.png" %}" alt="First slide">
           </div>
           <div class="carousel-item">
             <img class="d-block w-100" src="{% static "/hero_curs.png" %}" alt="First slide">
-          </div>
+          </div> -->
         </div>
+        {% if banners|length > 1 %}
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
@@ -357,6 +418,7 @@ a {
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
+        {% endif %}
       </div>
     
       <div style="margin-left: 250px; margin-right: 250px; align-items: center; margin-top: 50px; text-align: center; margin-bottom: 50px;">
@@ -516,6 +578,24 @@ a {
       </div>
   </div>
 
+  <div id="cookies-eu-banner" style="position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+  padding: 1rem .5rem;
+  background: #fff;
+  z-index: 1030;
+  color: #000;
+  font-size: 14px;
+  margin: 0;
+  display: none;">
+    Acest site foloseste fisiere numite "Cookies". Cookies sunt fisiere text mici, stocate pe computerul utilizatorilor. Acestea ne permit sa colectam informatii pentru a intelege modul in care site-ul nostru este utilizat si pentru a va oferi o experienta mai buna. Continuand sa utilizati site-ul, sunteti de acord cu utilizarea acestor cookies.
+
+    <button id="cookies-eu-reject">Refuz</button>
+    <button id="cookies-eu-accept">Accept</button>
+</div>
+
   <div id="map" style="width: 100%; height: 400px;"></div>
   <div style="display: flex; align-items: center; padding: 50px; background-color: #FCF3EE; box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.5);">
     <img src="{% static "/logo_caferino.svg" %}" style="width: 100px; height: 100px; margin-right: 100px;" alt="My image"></img>
@@ -523,8 +603,17 @@ a {
       <a href="/ateliere">Ateliere</a>
       <a href="/calendar">Calendar</a>
       <a href="/blog">Blog</a>
+      <a href="/politica-de-confidentialitate">Politica de confidentialitate</a>
+      <a href="/contact">Contact</a>
     </div>
     <div>Copyright ©2020 All rights reserved | Tailored by Ruffle.ro</div>
   </div>
+
+  <script src={% static "/cookies-eu-banner.js" %}></script>
+  <script>
+      new CookiesEuBanner(function () {
+          // Your code to launch when user accept cookies
+      });
+  </script>
 </body>
 </html>

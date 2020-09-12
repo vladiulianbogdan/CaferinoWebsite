@@ -8,6 +8,32 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100" rel="stylesheet" type="text/css">
+
+    <script>
+  // Initialize and add the map
+  function initMap() {
+    // The location of Uluru
+
+    var uluru = {lat: 44.45672, lng: 26.11526};
+    // The map, centered at Uluru
+    var map = new google.maps.Map(
+        document.getElementById('map'), {zoom: 18, center: uluru});
+    // The marker, positioned at Uluru
+    var marker = new google.maps.Marker({position: uluru, map: map});
+    console.log("hello!");
+  }
+    </script>
+
+<!--Load the API from the specified URL
+* The async attribute allows the browser to render the page while the API loads
+* The key parameter will contain your own API key (which is not needed for this tutorial)
+* The callback parameter executes the initMap() function
+-->
+<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVW8fhOMcMfcXaime2Z5PtCn2I7x8XJKQ&callback=initMap">
+</script>
+
+
     <style>
                 .navbar {
                 height: 100px;
@@ -23,9 +49,69 @@
                 padding-right:30px;
                 }
 
+                .row {
+                    display: flex;
+                    justify-content: center;
+                }
+
+                .image_element {
+                    width: 300px;
+                }
+
+                .row_element {
+                    width: 300px;
+                    margin: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+
+                .date {
+                    text-align: center;
+                    font-family: Montserrat; 
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+
+                .title {
+                    font-family: Montserrat; 
+                    font-size: 40px; 
+                    font-weight: lighter;
+                    margin-top: 15px;
+                    margin-bottom: 30px;
+                }
+
+                .subtitle {
+                    font-family: Roboto;
+                    font-size: 18px;
+                    font-weight: bold;
+                    margin-top: 30px;
+                }
+
+                .content {
+                    font-family: Roboto;
+                    font-size: 18px;
+                }
+
+                .readmore {
+                    background-color: #F13C37;
+                    width: 50%;
+                    text-align: center;
+                    color: white;
+                    margin-top: 20px;
+                    font-family: Montserrat;
+                    font-size: 16px;
+                    margin-top: auto;
+                }
+
                 a {
                     color:inherit;
                     text-decoration: none;
+                }
+                
+                .rule {
+                    text-align: center;
+                    margin-top: 20px;
                 }
      </style>
 
@@ -39,7 +125,7 @@
                 <div class="collapse navbar-collapse text-center" id="navbarsExample11">
                     <ul class="navbar-nav">
                         <li class="nav-item active navbar-collapse">
-                            <a class="nav-link" href="/">Home</a>
+                            <a class="nav-link" style="color: #CA351E; font-weight: bolder;" href="/">Home</a>
                         </li>
                         <li class="nav-item navbar-collapse">
                             <a class="nav-link" href="/ateliere/">Ateliere</a>
@@ -53,7 +139,7 @@
                               <img class="sex" style="width: 100px; height: 100px;" src="{% static "/logo_caferino.svg" %}" alt="My image">
                             </div>
                         <li class="nav-item navbar-collapse">
-                            <a class="nav-link" style="color: #CA351E; font-weight: bolder;" href="/calendar/">Calendar</a>
+                            <a class="nav-link" href="/calendar/">Calendar</a>
                         </li>
                         <li class="nav-item navbar-collapse">
                             <a class="nav-link" href="#">Club</a>
@@ -66,8 +152,13 @@
             </div>
         </nav>
 
-        <div style="display: flex; justify-content: center; margin-top: 100px; height: 100%;">
-            <iframe src="https://calendar.google.com/calendar/embed?src=kcc2hftkmhngq06h5sek2k9coo%40group.calendar.google.com&ctz=Europe%2FBucharest" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+        <div style="display: flex; margin-top: 80px; padding: 100px">
+            <div id="map" style="width: 50%; height: 400px;"></div>
+            <div style="padding: 50px;">
+                <p>Adresă:  Str. Soltuzului nr. 12, Bucuresti. Bucharest, Romania</p>
+                <p>Număr de telefon:  +40 744 434 335</p>
+                <p>Email: contact.caferino@gmail.com</p>
+            </div>
         </div>
 
         <div style="display: flex; align-items: center; padding: 50px; background-color: #FCF3EE; box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.5);">

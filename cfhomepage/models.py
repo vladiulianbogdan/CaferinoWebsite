@@ -8,3 +8,7 @@ class SocialProjects(models.Model):
     abstract = models.TextField()
     subtitle = models.CharField(max_length=200)
     description = models.TextField()
+
+class Banner(models.Model):
+    image = models.ImageField(upload_to = 'static/')
+    url = models.CharField(max_length=200, default="#")
