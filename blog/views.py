@@ -8,7 +8,6 @@ from .models import BlogPost
 def index(request):
     posts = BlogPost.objects.all()
 
-    print(posts)
     context = {'blog_posts': posts}
     return render(request, 'blog.html', context)
 
