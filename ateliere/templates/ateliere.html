@@ -129,11 +129,12 @@
                 </div>
             </div>
         </nav>
-        <div>
-            <img class="d-block w-100" src="{% static "/hero_ateliere.png" %}" alt="First slide">
-        </div>
 
         {% if events|length > 0 %}
+            <div>
+                <img class="d-block w-100" src="{% static "/hero_ateliere.png" %}" alt="First slide">
+            </div>
+
             <div style="display: flex; flex-direction: column; justify-content: center; margin-top: 20px;">
                 {% for item in events %}
                     {% if forloop.counter0|divisibleby:3 %}
@@ -160,7 +161,7 @@
                 {% endfor %}
             </div>
         {% else %}
-            <div style="display: flex; flex-direction: column; justify-content: center; height: 60%; text-align: center;">
+            <div style="text-align: center; height: 100%; margin-top: 100px;">
                 Momentan nu avem programat nici un atelier.
             </div>
         {% endif %}
