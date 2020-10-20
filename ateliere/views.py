@@ -27,10 +27,13 @@ def register(request, id):
         b = Participation(event_id=event, name=request.POST.get("nume", "")  + " " + request.POST.get("prenume", ""), email=request.POST.get("email", ""), phone=request.POST.get("telefon", ""))
         b.save()
 
-        email = EmailMessage('Iti confirmam inscrierea la evenimentul ' + event.title, 'Iti confirmam inscrierea la evenimentul ' + event.title, to=[b.email])
-        email.send()
+        try:
+            email = EmailMessage('Iti confirmam inscrierea la evenimentul ' + event.title, 'Iti confirmam inscrierea la evenimentul ' + event.title, to=[b.email])
+            email.send()
 
-        email = EmailMessage('Ai un nou participant la cursul ' + event.title, 'Ai un nou participant la cursul ' + event.title, to=["mirela@caferino.ro"])
-        email.send()
+            email = EmailMessage('Ai un nou participant la cursul ' + event.title, 'Ai un nou participant la cursul ' + event.title, to=["mirela@caferino.ro"])
+            email.send()
+        except Exception as e:
+            print(e)
 
         return render(request, 'register_confirmation.html', {})
