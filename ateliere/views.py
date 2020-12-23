@@ -6,7 +6,7 @@ from .models import Participation
 from django.core.mail import EmailMessage
 
 def index(request):
-    events = Event.objects.all()
+    events = Event.objects.all().order_by('-start_date')
 
     context = {'events': events}
 
@@ -20,7 +20,6 @@ def detaliu(request, id):
 def register(request, id):
     event = Event.objects.get(id=id)
 
-    print(request.method)
     if (request.method == "GET"):
         return render(request, 'register.html', {'event': event})
     elif (request.method == "POST"):

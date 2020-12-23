@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Caferino - Ateliere</title>
+        <title>Cofferino - Ateliere</title>
                 <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
@@ -31,6 +31,8 @@
 
                 .image_element {
                     width: 300px;
+		    max-height: 200px;
+		    object-fit: cover;
                     border-top-left-radius: 5px;
                     border-top-right-radius: 5px;
                 }
@@ -54,7 +56,7 @@
                     text-align: center;
                     font-family: Montserrat;
                     font-size: 26px;
-                    height: 70px;
+                    height: 100px;
                 }
 
                 .category {
@@ -112,10 +114,10 @@
                             <a class="nav-link" href="/blog/">Blog</a>
                         </li>
                             
-                            <div style="background-color: white; z-index: 100; display: flex; width: 240px; height: 220px; justify-content: center; align-items: center; box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.05);">
-                              {% load static %}
-                              <img class="image_logo_caferino" style="width: 150px; height: 100px;" src="{% static "/logo_caferino.svg" %}" alt="My image">
-                            </div>
+			<div style="background-color: white; z-index: 100; display: flex; width: 240px; height: 270px; justify-content: center; align-items: center; box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.05);">
+				{% load static %}
+				<img class="image_logo_caferino" style="width: 150px;" src="{% static "/logo_caferino.png" %}" alt="My image">
+			</div>
                         <li class="nav-item navbar-collapse">
                             <a class="nav-link" href="/calendar/">Calendar</a>
                         </li>
@@ -132,7 +134,7 @@
 
         {% if events|length > 0 %}
             <div>
-                <img class="d-block w-100" src="{% static "/hero_ateliere.png" %}" alt="First slide">
+                <img class="d-block w-100" src="{% static "/hero_ateliere-min.png" %}" alt="First slide">
             </div>
 
             <div style="display: flex; flex-direction: column; justify-content: center; margin-top: 20px;">
@@ -142,7 +144,9 @@
                     {% endif %}
                 
                     <div class="row_element">
+			<div>
                         <img class="image_element" src="/{{ item.image }}" alt="First slide">
+			</div>
                         <div class="separator"></div>
                         <p class="title"> {{ item.title }}</p>
                         <div class="category"> {{ item.category }}</div>
@@ -167,7 +171,7 @@
         {% endif %}
 
         <div style="display: flex; align-items: center; padding: 50px; background-color: #FCF3EE; box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.5);">
-            <img src="{% static "/logo_caferino.svg" %}" style="width: 100px; height: 100px; margin-right: 100px;" alt="My image"></img>
+            <img src="{% static "/logo_caferino.png" %}" style="width: 100px; height: 100px; margin-right: 100px;" alt="My image"></img>
             <div style="display: flex; flex-direction: column; width: 40%;">
               <a href="/ateliere">Ateliere</a>
               <a href="/calendar">Calendar</a>

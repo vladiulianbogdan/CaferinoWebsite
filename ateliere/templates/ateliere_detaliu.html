@@ -1,6 +1,8 @@
 <html>
+	{% load static %}
     <head>
-        <title>Caferino - {{ event.title }}</title>
+        <title>Cofferino - {{ event.title }}</title>
+	<meta property="og:image" content="https://caferino.ro/{{ event.image }}" />
                 <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
@@ -10,6 +12,22 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
     <style>
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+	padding-bottom: 250px;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
                 .navbar {
                 height: 100px;
                 }
@@ -64,6 +82,8 @@
 
     </head>
     <body style="background-image: url('/static/back_HP.png'); background-color: #FCF3EE;">
+	    <div id="page-container">
+		    <div id="content-wrap">
         <nav class="navbar navbar-expand-sm navbar-light" style="box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.05);">
             <div class="mx-auto d-sm-flex d-block flex-sm-nowrap">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
@@ -81,10 +101,10 @@
                             <a class="nav-link" href="/blog/">Blog</a>
                         </li>
                             
-                            <div style="background-color: white; z-index: 100; display: flex; width: 240px; height: 220px; justify-content: center; align-items: center;">
-                              {% load static %}
-                              <img class="image_logo_caferino" style="width: 150px; height: 100px;" src="{% static "/logo_caferino.svg" %}" alt="My image">
-                            </div>
+			<div style="background-color: white; z-index: 100; display: flex; width: 240px; height: 270px; justify-content: center; align-items: center; box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.05);">
+				{% load static %}
+				<img class="image_logo_caferino" style="width: 150px;" src="{% static "/logo_caferino.png" %}" alt="My image">
+			</div>
                         <li class="nav-item navbar-collapse">
                             <a class="nav-link" href="/calendar/">Calendar</a>
                         </li>
@@ -101,14 +121,14 @@
 
         <div>
             <div style="display: flex; margin-top: 150px; width: 70%; margin-left: auto; margin-right: auto;">
-                <img style="height: 400px;" src="/{{ event.image }}" %}">
-                <div style="margin-left: 30px;">
+		    <div style="width: 40%">
+                <img style="max-height: 400px; max-width:100%; max-height:100%;" src="/{{ event.image }}" %}">
+		    </div>
+                <div style="margin-left: 30px; width: 100%">
                     <div style="font-family: Montserrat; font-size: 40px; font-weight: lighter;">{{ event.title }}</div>
-                    <div style="height: 5px; background-color: #E6A139;"></div>
+                    <div style="height: 5px; background-color: #E6A139; width: 80%"></div>
                     <p style="font-family: Montserrat; font-size: 16px; font-weight: bold;"> {{ event.category }}</p>
-                    <div style="font-family: Roboto; font-size: 14px;">
-                        {{ event.content }}
-                    </div>
+                    <pre style="font-family: Roboto; font-size: 14px; width: 80%; white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word;">{{ event.content }}</pre>
                     <div style="font-family: Montserrat; font-size: 20px; font-weight: 900; margin-top: 20px;">{{ event.price }} lei / persoana</div>
                     <div style="background-color: #F13C37; width: 50%; text-align: center; color: white; margin-top: 20px; font-family: Montserrat; font-size: 16px;"><a href="/ateliere/register/{{event.id}}/">Inscrie-te</a></div>
                 </div>
@@ -154,8 +174,8 @@
             </div>
         </div>
 
-        <div style="display: flex; align-items: center; padding: 50px; background-color: #FCF3EE; box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.5);">
-            <img src="{% static "/logo_caferino.svg" %}" style="width: 100px; height: 100px; margin-right: 100px;" alt="My image"></img>
+        <div id="footer" style="display: flex; align-items: center; padding: 50px; background-color: #FCF3EE; box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.5);">
+            <img src="{% static "/logo_caferino.png" %}" style="width: 100px; height: 100px; margin-right: 100px;" alt="My image"></img>
             <div style="display: flex; flex-direction: column; width: 40%;">
               <a href="/ateliere">Ateliere</a>
               <a href="/calendar">Calendar</a>
@@ -165,5 +185,7 @@
             </div>
             <div>Copyright ©2020 All rights reserved | Tailored by Ruffle.ro</div>
           </div>
+		    </div>
+	    </div>
     </body>
 </html>

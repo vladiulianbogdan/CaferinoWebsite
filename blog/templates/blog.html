@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Caferino - Blog</title>
+        <title>Cofferino - Blog</title>
                 <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
@@ -10,6 +10,22 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
     <style>
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 250px;    /* Footer height */
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
                 .navbar {
                 height: 100px;
                 }
@@ -34,6 +50,7 @@
                 }
 
                 .row_element {
+	            padding: 10px;
                     width: 300px;
                     margin: 20px;
                     display: flex;
@@ -70,7 +87,6 @@
                     margin-top: 20px;
                     font-family: Montserrat;
                     font-size: 16px;
-                    margin-top: auto;
                 }
 
                 a {
@@ -81,6 +97,8 @@
 
     </head>
     <body style="background-image: url('/static/back_HP.png'); background-color: #FCF3EE;">
+	    <div id="page-container">
+		    <div id="content-wrap">
         <nav class="navbar navbar-expand-sm navbar-light" style="box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.05);">
             <div class="mx-auto d-sm-flex d-block flex-sm-nowrap">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
@@ -98,10 +116,10 @@
                             <a class="nav-link" style="color: #CA351E;" href="/blog/">Blog</a>
                         </li>
                             
-                            <div style="background-color: white; z-index: 100; display: flex; width: 240px; height: 220px; justify-content: center; align-items: center; box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.05);">
-                              {% load static %}
-                              <img class="image_logo_caferino" style="width: 150px; height: 100px;" src="{% static "/logo_caferino.svg" %}" alt="My image">
-                            </div>
+			<div style="background-color: white; z-index: 100; display: flex; width: 240px; height: 270px; justify-content: center; align-items: center; box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.05);">
+				{% load static %}
+				<img class="image_logo_caferino" style="width: 150px;" src="{% static "/logo_caferino.png" %}" alt="My image">
+			</div>
                         <li class="nav-item navbar-collapse">
                             <a class="nav-link" href="/calendar/">Calendar</a>
                         </li>
@@ -118,7 +136,9 @@
 
         {% if blog_posts|length > 0 %}
             <div style="display: flex; margin-top: 150px; width: 70%; margin-left: auto; margin-right: auto; height: auto;">
-                <img style="height: 300px;" src="/{{ blog_posts.0.image }}">
+		<div>
+                <img style="max-height: 180px;" src="/{{ blog_posts.0.image }}">
+		</div>
                 <div style="width: 100%; margin-left: 30px; display: flex; flex-direction: column;">
                     <div style="font-family: Montserrat; font-size: 16px; font-weight: bold;"> {{ blog_posts.0.created_at|date:"d.m.Y" }} </div>
                     <p style="font-family: Montserrat; font-size: 30px; font-weight: lighter;">{{ blog_posts.0.title }}</p>
@@ -133,9 +153,6 @@
                 </div>
             </div>
 
-            {% if blog_posts|length == 1 %}
-                <div style="height: 60%;"></div>
-            {% endif %}
 
             <div style="display: flex; flex-direction: column; justify-content: center; margin-top: 20px;">
                 {% for item in blog_posts|slice:"1:" %}
@@ -168,9 +185,10 @@
                 Vom reveni în curând cu mai multe postări.
             </div>
         {% endif %}
+	    </div>
 
-        <div style="display: flex; align-items: center; padding: 50px; background-color: #FCF3EE; box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.5);">
-            <img src="{% static "/logo_caferino.svg" %}" style="width: 100px; height: 100px; margin-right: 100px;" alt="My image"></img>
+        <div id="footer" style="display: flex; align-items: center; padding: 50px; background-color: #FCF3EE; box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.5);">
+            <img src="{% static "/logo_caferino.png" %}" style="width: 100px; height: 100px; margin-right: 100px;" alt="My image"></img>
             <div style="display: flex; flex-direction: column; width: 40%;">
               <a href="/ateliere">Ateliere</a>
               <a href="/calendar">Calendar</a>
@@ -180,5 +198,6 @@
             </div>
             <div>Copyright ©2020 All rights reserved | Tailored by Ruffle.ro</div>
           </div>
+	    </div>
     </body>
 </html>

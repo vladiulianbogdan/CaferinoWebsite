@@ -27,8 +27,6 @@ class Event(models.Model):
     def show_participants(self):
         participations = self.participation_set.all()
 
-        print(participations)
-
         string = "<ul>"
 
         for participation in participations:
