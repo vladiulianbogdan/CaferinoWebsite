@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'cfhomepage',
     'ateliere',
     'blog',
-    'caferinocalendar'
+    'caferinocalendar',
+    'summerschool'
 ]
 
 MIDDLEWARE = [
@@ -132,8 +133,8 @@ STATICFILES_DIRS = (
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 EMAIL_USE_TLS = True
-EMAIL_HOST = '89.46.6.46'
-EMAIL_HOST_USER = 'mirela@caferino.ro'
-EMAIL_HOST_PASSWORD = 't3odXs-mNzYg'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'cofferino.hub@gmail.com'
+EMAIL_HOST_PASSWORD = 'oqsnrksujmqfffqh'
 EMAIL_PORT = 587
-DEFAULT_FROM_EMAIL = "mirela@caferino.ro"
+DEFAULT_FROM_EMAIL = "cofferino.hub@gmail.com"

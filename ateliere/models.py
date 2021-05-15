@@ -30,7 +30,7 @@ class Event(models.Model):
         string = "<ul>"
 
         for participation in participations:
-            string += "<li><a href='/admin/ateliere/participation/" + str(participation.id) +  "/change/'> " + participation.name + ", " + participation.email + ", " + participation.phone + "</a></li>"
+            string += "<li><a href='/admin/ateliere/participation/" + str(participation.id) +  "/change/'> " + participation.name + ", " + participation.email + ", " + participation.phone + ", Nume copil:" + participation.childName + ", Varsta copil " + participation.childAge + "</a></li>"
 
         string += "</ul>"
 
@@ -54,5 +54,7 @@ class Participation(models.Model):
     id = models.AutoField(primary_key=True)
     event_id = models.ForeignKey(Event, on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
+    childName = models.CharField(max_length=200)
+    childAge = models.CharField(max_length=200)
     email = models.CharField(max_length=200)
     phone = models.CharField(max_length=200)
