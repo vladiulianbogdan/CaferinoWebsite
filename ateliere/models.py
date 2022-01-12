@@ -3,6 +3,9 @@ from django.contrib import admin
 from datetime import datetime    
 from django.utils.html import format_html
 
+class EventManager(models.Manager):
+    pass
+
 # Create your models here.
 # Create your models here.
 class Event(models.Model):
@@ -20,6 +23,7 @@ class Event(models.Model):
     content = models.TextField()
     start_date = models.DateTimeField(default=datetime.now)
     end_date = models.DateTimeField(default=datetime.now)
+    objects = EventManager()
 
     def publish_url(self):
         return "http://caferino.com/ateliere/register/" + str(self.id)
@@ -30,15 +34,31 @@ class Event(models.Model):
         string = "<ul>"
 
         for participation in participations:
-            string += "<li><a href='/admin/ateliere/participation/" + str(participation.id) +  "/change/'> " + participation.name + ", " + participation.email + ", " + participation.phone + ", Nume copil:" + participation.childName + ", Varsta copil " + participation.childAge + "</a></li>"
+            string += "<li><a href='/admin/ateliere/participation/" + str(participation.id) +  "/change/'> " + participation.name + ", " + participation.email + ", " + participation.phone + ", Nume copil:" + participation.childName + ", Varsta copil " + participation.childAge + "; Data participare: "+ participation.date + "</a></li></br>"
 
         string += "</ul>"
 
         return format_html(string)
 
+
+class EventDate(models.Model):
+    start_date = models.CharField(max_length=200)
+    event_id = models.ForeignKey(Event, on_delete=models.CASCADE)
+
+class EventDateInLine(admin.TabularInline):
+    model = EventDate 
+    extra = 0
+
 class EventAdmin(admin.ModelAdmin):
-    list_display = ('title', 'image', 'content', 'start_date', 'end_date', 'publish_url')
+    list_display = ('title', 'image', 'content', 'start_date', 'end_date', 'publish_url', '_eventDates')
     readonly_fields = ['publish_url', 'show_participants']
+
+    inlines = [
+       EventDateInLine 
+    ]
+ 
+    def _eventDates(self, obj):
+        return obj.eventdate_set.all().count()
 
     fieldsets = (
         (None, {
@@ -58,3 +78,4 @@ class Participation(models.Model):
     childAge = models.CharField(max_length=200)
     email = models.CharField(max_length=200)
     phone = models.CharField(max_length=200)
+    date = models.CharField(max_length=200, default="")

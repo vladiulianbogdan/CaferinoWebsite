@@ -24,7 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include('cfhomepage.urls')),
     url(r'^ateliere/', include('ateliere.urls')),
-    url(r'^summer-school/', include('summerschool.urls')),
+    url(r'^petreceri/', include('summerschool.urls')),
     url(r'^blog/', include('blog.urls')),
     url(r'^calendar/', include('caferinocalendar.urls')),
 ]

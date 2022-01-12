@@ -27,12 +27,23 @@ def register(request, id):
         b.save()
 
         try:
-            email = EmailMessage('Iti confirmam inscrierea la evenimentul ' + event.title, 'Iti confirmam inscrierea la evenimentul ' + event.title, to=[b.email])
+            mailMessage = """
+Buna!
+
+Ne bucuram ca doresti sa participi la scoala noastra de vara!
+Am primit cererea ta de participare. Te vom contacta prin mail sau sms pentru a valida inscriere in cel mai scurt timp.
+Acest e-mail este trimis automat de sistem si informeaza ca am primit inscrierea dvs, nu garanteaza ca mai sunt locuri disponibile. Disponibilitatea si confirmarea va fi transmisa ulterior in functie de numarul de copii deja inscrisi.
+
+O zi minunata va dorim!
+Echipa COFFERINO HUB
+            """
+            email = EmailMessage('Am primit cererea ta de participare la ' + event.title, mailMessage, to=[b.email])
             email.send()
 
-            email = EmailMessage('Ai un nou participant la cursul ' + event.title, 'Ai un nou participant la cursul ' + event.title, to=["cofferino.hub@gmail.com"])
+            email = EmailMessage('Ai un nou participant la scoala de vara ' + event.title, 'Ai un nou participant la scoala de vara ' + event.title, to=["cofferino.hub@gmail.com"])
             email.send()
         except Exception as e:
             print(e)
+
 
         return render(request, 'summers_school_register_confirmation.html', {})

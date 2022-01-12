@@ -32,7 +32,7 @@ class SummerSchoolEvent(models.Model):
         string = "<ul>"
 
         for participation in participations:
-            string += "<li><a href='/admin/summer-school/participation/" + str(participation.id) +  "/change/'> " + participation.name + ", " + participation.email + ", " + participation.phone + ", Nume copil:" + participation.childName + ", Varsta copil " + participation.childAge + "</a></li>"
+            string += "<li><a href='/admin/summerschool/summerschoolparticipation/" + str(participation.id) +  "/change/'> " + participation.name + ", " + participation.email + ", " + participation.phone + ", Nume copil:" + participation.childName + ", Varsta copil " + participation.childAge + "</a></li>"
 
         string += "</ul>"
 

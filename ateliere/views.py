@@ -15,15 +15,15 @@ def index(request):
 def detaliu(request, id):
     event = Event.objects.get(id=id)
 
-    return render(request, 'ateliere_detaliu.html', {'event': event})
+    return render(request, 'ateliere_detaliu.html', {'event': event,'eventDates': event.eventdate_set.all()})
 
 def register(request, id):
     event = Event.objects.get(id=id)
 
     if (request.method == "GET"):
-        return render(request, 'register.html', {'event': event})
+        return render(request, 'register.html', {'event': event,'eventDates': event.eventdate_set.all()})
     elif (request.method == "POST"):
-        b = Participation(event_id=event, name=request.POST.get("nume", "")  + " " + request.POST.get("prenume", ""), childName=request.POST.get('childName'), childAge=request.POST.get('childAge'), email=request.POST.get("email", ""), phone=request.POST.get("telefon", ""))
+        b = Participation(event_id=event, name=request.POST.get("nume", "")  + " " + request.POST.get("prenume", ""), childName=request.POST.get('childName'), childAge=request.POST.get('childAge'), email=request.POST.get("email", ""), phone=request.POST.get("telefon", ""), date=request.POST.get("eventDate", ""))
         b.save()
 
         try:
@@ -37,7 +37,7 @@ Acest e-mail este trimis automat de sistem si informeaza ca am primit inscrierea
 O zi minunata va dorim!
 Echipa COFFERINO HUB
             """
-            email = EmailMessage('Iti confirmam inscrierea la evenimentul ' + event.title, mailMessage, to=[b.email])
+            email = EmailMessage('Am primit cererea ta de participare la ' + event.title, mailMessage, to=[b.email])
             email.send()
 
             email = EmailMessage('Ai un nou participant la cursul ' + event.title, 'Ai un nou participant la cursul ' + event.title, to=["cofferino.hub@gmail.com"])

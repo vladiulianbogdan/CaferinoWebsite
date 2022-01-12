@@ -1,0 +1,37 @@
+{% load static %}
+
+    <nav class="navbar navbar-expand-sm navbar-light">
+        <div class="mx-auto d-sm-flex d-block flex-sm-nowrap">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse text-center" id="navbarsExample11">
+                <ul class="navbar-nav">
+                    <li class="nav-item active navbar-collapse">
+                        <a class="nav-link" id="home-menu" href="/">Home</a>
+                        <div style="min-height: 100px;"></div>
+                    </li>
+                    <li class="nav-item navbar-collapse">
+                        <a class="nav-link" id="ateliere-menu" href="/ateliere/">Ateliere</a>
+                    </li>
+                    <li class="nav-item navbar-collapse">
+                        <a class="nav-link" id="blog-menu" href="/blog/">Blog</a>
+                    </li>
+
+                    <div style="background-color: white; z-index: 100; display: flex; width: 240px; height: 270px; justify-content: center; align-items: center; box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.05);">
+
+                          <img class="image_logo_caferino" style="width: 150px;" src="{% static "/logo_caferino.png" %}" alt="My image">
+                        </div>
+                    <li class="nav-item navbar-collapse">
+                        <a class="nav-link" id="calendar-menu" href="/calendar/">Calendar</a>
+                    </li>
+                    <li class="nav-item navbar-collapse">
+                        <a class="nav-link" id="club-menu" href="/club">Club</a>
+                    </li>
+                    <li class="nav-item navbar-collapse">
+                        <a class="nav-link" id="summer-school-menu" href="/petreceri">Petreceri</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>

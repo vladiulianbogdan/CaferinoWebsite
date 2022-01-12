@@ -4,6 +4,7 @@ from django.contrib import admin
 
 from .models import EventAdmin
 from .models import Event
+from .models import EventDate
 from .models import Participation
 
 admin.site.register(Event, EventAdmin)
