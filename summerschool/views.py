@@ -30,11 +30,11 @@ def register(request, id):
             mailMessage = """
 Buna!
 
-Ne bucuram ca doresti sa participi la scoala noastra de vara!
-Am primit cererea ta de participare. Te vom contacta prin mail sau sms pentru a valida inscriere in cel mai scurt timp.
-Acest e-mail este trimis automat de sistem si informeaza ca am primit inscrierea dvs, nu garanteaza ca mai sunt locuri disponibile. Disponibilitatea si confirmarea va fi transmisa ulterior in functie de numarul de copii deja inscrisi.
+Ne bucuram ca organizezi evenimentul la noi!
 
-O zi minunata va dorim!
+Am primit solicitarea ta si vom reveni cu informatiile in cel mai scurt timp.
+
+ O zi minunata va dorim!
 Echipa COFFERINO HUB
             """
             email = EmailMessage('Am primit cererea ta de participare la ' + event.title, mailMessage, to=[b.email])
