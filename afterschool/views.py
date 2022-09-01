@@ -10,7 +10,7 @@ def index(request):
 
     context = {'events': events}
 
-    return render(request, 'After-school.html', context)
+    return render(request, 'after-school.html', context)
 
 def detaliu(request, id):
     event = AfterSchoolEvent.objects.get(id=id)
