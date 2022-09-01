@@ -55,7 +55,7 @@ class EventDateInLine(admin.TabularInline):
     extra = 0
 
 class EventAdmin(admin.ModelAdmin):
-    list_display = ('title', 'image', 'content', 'start_date', 'end_date', 'publish_url', '_eventDates')
+    list_display = ('title', 'image', 'content', 'start_date', 'end_date', 'location', 'publish_url', '_eventDates')
     readonly_fields = ['publish_url', 'show_participants']
 
     inlines = [
