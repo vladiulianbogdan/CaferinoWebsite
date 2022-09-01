@@ -1,0 +1,178 @@
+{% load static %}
+<html>
+    <head>
+        <title>Cofferino - Petreceri</title>
+                <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!--  JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+ fbq('init', '585946598986313'); 
+fbq('track', 'PageView');
+</script>
+<noscript>
+ <img height="1" width="1" 
+src="https://www.facebook.com/tr?id=585946598986313&ev=PageView
+&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->
+
+    <style>
+                .navbar {
+                    height: 100px;
+                }
+
+                .image_logo_caferino {
+                    transform: translateY(calc(50% - 20px));
+                    z-index: 10;
+                }
+
+		                #summer-school-menu {
+        color: #CA351E;
+}
+
+
+                .navbar-nav > li{
+                    padding-left:30px;
+                    padding-right:30px;
+                }
+
+                .row {
+                    display: flex;
+                    justify-content: center;
+                }
+
+                .image_element {
+                    width: 300px;
+		    max-height: 200px;
+		    object-fit: cover;
+                    border-top-left-radius: 5px;
+                    border-top-right-radius: 5px;
+                }
+
+                .separator {
+                    height: 7px;
+                    background-color: #E6A139;
+                }
+
+                .row_element {
+                    width: 300px;
+                    margin: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    background-color: white;
+                    border-radius: 25px;
+                }
+
+                .title {
+                    text-align: center;
+                    font-family: Montserrat;
+                    font-size: 26px;
+                    height: 100px;
+                }
+
+                .category {
+                    background-color: #E6A139;
+                    text-align: center;
+                    margin-right: 40px;
+                    margin-left: 40px;
+                    font-family: Montserrat;
+                    font-size: 16px;
+                    color: white;
+                    border-radius: 5px;
+                }
+
+                .content {
+                    text-align: center;
+                    font-family: Roboto;
+                    font-size: 14px;
+                    margin-top: 40px;
+                    height: 160px;
+                }
+
+                .find_out_more {
+                    background-color: #E6A139;
+                    font-family: Montserrat;
+                    font-size: 12px;
+                    text-align: center;
+                    color: white;
+                    border-bottom-left-radius: 5px;
+                    border-bottom-right-radius: 5px;
+                }
+
+
+                a {
+                    color:inherit;
+                    text-decoration: none;
+                }
+     </style>
+
+    </head>
+    <body style="background-image: url('/static/back_HP.png'); background-color: #FCF3EE;">
+	    {% include "navbar.html" %}
+
+        {% if events|length > 0 %}
+            <div>
+                <img class="d-block w-100" src="{% static "/party-min.png" %}" alt="First slide">
+            </div>
+
+            <div style="display: flex; flex-direction: column; justify-content: center; margin-top: 20px;">
+                {% for item in events %}
+                    {% if forloop.counter0|divisibleby:3 %}
+                        <div class="row"> <!-- row -->
+                    {% endif %}
+                
+                    <div class="row_element">
+			<div>
+                        <img class="image_element" src="/{{ item.image }}" alt="First slide">
+			</div>
+                        <div class="separator"></div>
+                        <p class="title"> {{ item.title }}</p>
+                        <div class="category"> {{ item.category }}</div>
+                        {% if item.content|length > 250 %}
+                            <div class="content" style="padding: 5px;" >  {{item.content|slice:"0:250" }}... </div>
+                        {% else %}
+                            <div class="content">  {{item.content }} </div>
+                        {% endif %}
+                        <div class="find_out_more"><a href="/petreceri/details/{{item.id}}/">afla mai multe</a></div>
+                    </div>
+
+                    {% if forloop.counter|divisibleby:3 %} 
+                        </div>
+                    {% endif %}
+
+                {% endfor %}
+            </div>
+        {% else %}
+            <div style="text-align: center; height: 100%; margin-top: 100px;">
+                Momentan nu avem programat nici un eveniment.
+            </div>
+        {% endif %}
+
+        <div style="display: flex; align-items: center; padding: 50px; background-color: #FCF3EE; box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.5);">
+            <img src="{% static "/logo_caferino.png" %}" style="width: 100px; height: 100px; margin-right: 100px;" alt="My image"></img>
+            <div style="display: flex; flex-direction: column; width: 40%;">
+              <a href="/ateliere">Ateliere</a>
+              <a href="/calendar">Calendar</a>
+              <a href="/blog">Blog</a>
+              <a href="/politica-de-confidentialitate">Politica de confidențialitate</a>
+              <a href="/contact">Contact</a>
+            </div>
+            <div>Copyright ©2020 All rights reserved | Tailored by Ruffle.ro</div>
+          </div>
+    </body>
+</html>

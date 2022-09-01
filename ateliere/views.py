@@ -5,8 +5,15 @@ from .models import Event
 from .models import Participation
 from django.core.mail import EmailMessage
 
-def index(request):
-    events = Event.objects.all().order_by('-start_date')
+def parculCircului(request):
+    events = Event.objects.filter(location="Parcul Circului").all().order_by('-start_date')
+
+    context = {'events': events}
+
+    return render(request, 'ateliere.html', context)
+
+def aurelVlaicu(request):
+    events = Event.objects.filter(location="Aurel Vlaicu").all().order_by('-start_date')
 
     context = {'events': events}
 

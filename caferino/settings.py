@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'ateliere',
     'blog',
     'caferinocalendar',
-    'summerschool'
+    'summerschool',
+    'afterschool'
 ]
 
 MIDDLEWARE = [

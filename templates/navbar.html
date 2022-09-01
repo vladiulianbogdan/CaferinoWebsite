@@ -1,4 +1,62 @@
 {% load static %}
+<style>
+    .dropbtn {
+  /* background-color: #04AA6D; */
+  color: rgba(0,0,0,.5);
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropbtn:hover {
+  color: white;
+  background-color: #0b1712;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropbtn:focus {
+  color: white;
+  background-color: #0b1712;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #ffffff00;}
+</style>
 
     <nav class="navbar navbar-expand-sm navbar-light">
         <div class="mx-auto d-sm-flex d-block flex-sm-nowrap">
@@ -11,22 +69,31 @@
                         <a class="nav-link" id="home-menu" href="/">Home</a>
                         <div style="min-height: 100px;"></div>
                     </li>
+                    <!-- <li class="nav-item navbar-collapse">
+                        <a class="nav-link" id="ateliere-menu" href="/ateliere/parcul-circului/">Ateliere</a>
+                    </li> -->
                     <li class="nav-item navbar-collapse">
-                        <a class="nav-link" id="ateliere-menu" href="/ateliere/">Ateliere</a>
-                    </li>
-                    <li class="nav-item navbar-collapse">
-                        <a class="nav-link" id="blog-menu" href="/blog/">Blog</a>
+                    <div class="dropdown">
+                        <div class="dropbtn">Ateliere</div>
+                        <div class="dropdown-content">
+                          <a href="/ateliere/parcul-circului">Parcul Circului</a>
+                          <a href="/ateliere/aurel-vlaicu">Aurel Vlaicu</a>
+                        </div>
+                      </div>
                     </li>
 
+                    <li class="nav-item navbar-collapse">
+                        <a class="nav-link" id="calendar-menu" href="/calendar/">Calendar</a>
+                    </li>
                     <div style="background-color: white; z-index: 100; display: flex; width: 240px; height: 270px; justify-content: center; align-items: center; box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.05);">
 
                           <img class="image_logo_caferino" style="width: 150px;" src="{% static "/logo_caferino.png" %}" alt="My image">
                         </div>
+                        <li class="nav-item navbar-collapse">
+                            <a class="nav-link" id="blog-menu" href="/blog/">Blog</a>
+                        </li>
                     <li class="nav-item navbar-collapse">
-                        <a class="nav-link" id="calendar-menu" href="/calendar/">Calendar</a>
-                    </li>
-                    <li class="nav-item navbar-collapse">
-                        <a class="nav-link" id="club-menu" href="/club">Club</a>
+                        <a class="nav-link" id="after-school-menu" href="/after-school">After School</a>
                     </li>
                     <li class="nav-item navbar-collapse">
                         <a class="nav-link" id="summer-school-menu" href="/petreceri">Petreceri</a>
