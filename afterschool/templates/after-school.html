@@ -127,7 +127,7 @@ src="https://www.facebook.com/tr?id=585946598986313&ev=PageView
 
         {% if events|length > 0 %}
             <div>
-                <img class="d-block w-100" src="{% static "/party-min.png" %}" alt="First slide">
+                <img class="d-block w-100" src="{% static "/hero_ateliere-min.png" %}" alt="First slide">
             </div>
 
             <div style="display: flex; flex-direction: column; justify-content: center; margin-top: 20px;">
@@ -148,7 +148,7 @@ src="https://www.facebook.com/tr?id=585946598986313&ev=PageView
                         {% else %}
                             <div class="content">  {{item.content }} </div>
                         {% endif %}
-                        <div class="find_out_more"><a href="/petreceri/details/{{item.id}}/">afla mai multe</a></div>
+                        <div class="find_out_more"><a href="/after-school/details/{{item.id}}/">afla mai multe</a></div>
                     </div>
 
                     {% if forloop.counter|divisibleby:3 %} 
