@@ -23,6 +23,15 @@
         document.getElementById('map'), {zoom: 18, center: uluru});
     // The marker, positioned at Uluru
     var marker = new google.maps.Marker({position: uluru, map: map});
+
+
+    var uluru2 = {lat: 44.48142865439158, lng: 26.09626710540485};
+    // The map, centered at Uluru
+    var map2 = new google.maps.Map(
+        document.getElementById('map2'), {zoom: 18, center: uluru2});
+    // The marker, positioned at Uluru
+    var marker2 = new google.maps.Marker({position: uluru2, map: map2});
+
     console.log("hello!");
   }
     </script>
@@ -125,20 +134,36 @@
     <body style="background-image: url('/static/back_HP.png'); background-color: #FCF3EE;">
 	        {% include "navbar.html" %}
 
-        <div style="display: flex; margin-top: 80px; padding: 100px">
+
+        <div style="display: flex; margin-top: 80px; padding-top: 100px; padding-left: 100px; padding-right:100px">
             <div id="map" style="width: 50%; height: 400px;"></div>
             <div style="padding-left: 50px;">
                 <p>Adresă:  Str. Soltuzului nr. 12, Bucuresti. Bucharest, Romania</p>
                 <p>Număr de telefon:  +40 736 510 904</p>
                 <p>Email: cofferino.hub@gmail.com</p>
 <pre>
-LUNI - ÎNCHIS
-MARȚI: 10:00 - 17:00
+LUNI: ÎNCHIS
+MARȚI: ÎNCHIS
 MIERCURI-VINERI: 10:00-19:00
 SÂMBĂTĂ-DUMINICĂ: 10:00-20:00
 </pre>
             </div>
         </div>
+
+	        <div style="display: flex; margin-top: 80px; padding-bottom: 100px; padding-left: 100px; padding-right: 100px">
+            <div id="map2" style="width: 50%; height: 400px;"></div>
+            <div style="padding-left: 50px;">
+                <p>Adresă: Strada Elena Caragiani 20a, București 014214</p>
+                <p>Număr de telefon:  +40 736 510 904</p>
+                <p>Email: cofferino.hub@gmail.com</p>
+<pre>
+LUNI-VINERI: 10:00-19:00
+SÂMBĂTĂ-DUMINICĂ: ÎNCHIS
+</pre>
+            </div>
+        </div>
+
+	Pentru detalii evenimente private: 0736619590
 
         <div style="display: flex; align-items: center; padding: 50px; background-color: #FCF3EE; box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.5);">
             <img src="{% static "/logo_caferino.png" %}" style="width: 100px; height: 100px; margin-right: 100px;" alt="My image"></img>
